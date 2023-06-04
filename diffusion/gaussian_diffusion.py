@@ -197,7 +197,7 @@ class GaussianDiffusion:
         :return: A noisy version of x_start.
         """
         device = "cuda:0" if th.cuda.is_available() else "cpu"
-        # device = "cpu"
+        device = "cpu"
 
         if noise is None:
             noise = th.randn_like(x_start)
@@ -267,7 +267,7 @@ class GaussianDiffusion:
             torch.cuda.set_device(device)
         else:
             device = "cpu"
-        # device = "cpu"
+        device = "cpu"
 
         cond = torch.tensor([1], device=device)
         model_output = model(x, self._scale_timesteps(t), y=cond)

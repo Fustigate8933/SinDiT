@@ -22,7 +22,7 @@ def sample_sindit():
     RESULTS_PATH = "./results"
     SCALE_FACTOR = 0.75
 
-    logging.basicConfig(filename="./cleandit/training_log.txt", level=logging.DEBUG, filemode="a",
+    logging.basicConfig(filename="./training_log.txt", level=logging.DEBUG, filemode="a",
                         format="[%(asctime)s] %(message)s")
     logging.getLogger().addHandler(logging.StreamHandler())
 
@@ -31,22 +31,22 @@ def sample_sindit():
         torch.cuda.set_device(device)
     else:
         device = "cpu"
-    # device = "cpu"  # also edit like 268 on gaussian_diffusion.py
+    device = "cpu"  # also edit like 268 on gaussian_diffusion.py
     logging.info(f"Starting program on {device}")
     seed = 42
     torch.manual_seed(seed)
 
-    img_transforms = transforms.Compose([
-        transforms.ToTensor(),
-        transforms.Resize(input_size),
-        transforms.CenterCrop(input_size),
-        transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])
-    ])
-    data_path = "./data"
-    data = torchvision.datasets.ImageFolder(data_path, transform=img_transforms)
-    dataloader = iter(torch.utils.data.DataLoader(data, num_workers=0, batch_size=1, shuffle=True))
-    class_names = os.listdir(data_path)
-    logging.info(f"Data created with {len(data)} images")
+    # img_transforms = transforms.Compose([
+    #     transforms.ToTensor(),
+    #     transforms.Resize(input_size),
+    #     transforms.CenterCrop(input_size),
+    #     transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])
+    # ])
+    # data_path = "./data"
+    # data = torchvision.datasets.ImageFolder(data_path, transform=img_transforms)
+    # dataloader = iter(torch.utils.data.DataLoader(data, num_workers=0, batch_size=1, shuffle=True))
+    # class_names = os.listdir(data_path)
+    # logging.info(f"Data created with {len(data)} images")
 
     patch_size = 4
     in_channels = 3
@@ -55,14 +55,14 @@ def sample_sindit():
     num_heads = 16
     mlp_ratio = 4.0
     class_dropout_prob = 0.1
-    num_classes = len(data)
+    # num_classes = len(data)
     learn_sigma = False
 
     models = []
     diffusions = []
 
     for _ in range(STOP_SCALE + 1)[-1:]:
-        model_path = os.path.join(MODELS_PATH, "img1.pt")
+        model_path = os.path.join(MODELS_PATH, "Landscapes.pt")
         model = DiT(
             input_size=input_size,
             patch_size=patch_size,
@@ -72,7 +72,7 @@ def sample_sindit():
             num_heads=num_heads,
             mlp_ratio=mlp_ratio,
             class_dropout_prob=class_dropout_prob,
-            num_classes=num_classes,
+            num_classes=1,
             learn_sigma=learn_sigma,
             device=device
         )
@@ -110,7 +110,7 @@ def sample_sindit():
         )
 
         for i in range(sample.shape[0]):
-            torchvision.utils.save_image(sample[i] * 0.5 + 0.5, f"{RESULTS_PATH}/1.png")
+            torchvision.utils.save_image(sample[i] * 0.5 + 0.5, f"{RESULTS_PATH}/landscape{i}.png")
     logging.info("Sampling complete")
 
 

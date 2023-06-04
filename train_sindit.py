@@ -5,7 +5,7 @@ from torchvision import transforms
 from diffusion.dit import DiT
 import logging
 from time import time
-import random
+from tqdm import tqdm
 from diffusion.resample import UniformSampler
 from diffusion.respace import create_gaussian_diffusion
 import os
@@ -21,7 +21,7 @@ def train_sindit():
         torch.cuda.set_device(device)
     else:
         device = "cpu"
-    # device = "cpu"  # edit line 199 in gaussian_diffusion.py
+    device = "cpu"  # edit line 199 in gaussian_diffusion.py
 
     logging.info(f"Starting program on {device}")
     seed = 42
@@ -54,7 +54,7 @@ def train_sindit():
         num_heads=num_heads,
         mlp_ratio=4.0,
         class_dropout_prob=0.1,
-        num_classes=len(data),
+        num_classes=1,
         learn_sigma=False
     ).to(device)
     logging.info("Model created")
@@ -72,10 +72,10 @@ def train_sindit():
     running_loss = 0
     start_time = time()
 
-    for i in range(len(data)):
+    logging.info("Starting Training...")
+    for _ in tqdm(range(len(data))):
         batch, cond = next(dataloader)  # batch: because only training on 1 image a time, shape is [1, 3, input_size, input_size]
         cond = torch.tensor([1], device=device)
-        logging.info(f"Training on image {i + 1} with shape {batch.shape}")
         batch = batch.to(device)
         cond = cond.to(device)
         t, weights = schedule_sampler.sample(batch.shape[0], device)
@@ -98,16 +98,15 @@ def train_sindit():
         loss.backward()
         opt.step()
 
-        save_params = {
-            "model": model.state_dict(),
-            "opt": opt.state_dict(),
-        }
-        if not os.path.exists("./models"):
-            os.makedirs("./models")
-        save_path = f"./models/{class_names[i]}.pt"
-        torch.save(save_params, save_path)
-
-    logging.info("Training complete!")
+    save_params = {
+        "model": model.state_dict(),
+        "opt": opt.state_dict(),
+    }
+    if not os.path.exists("./models"):
+        os.makedirs("./models")
+    save_path = f"./models/landscapes.pt"
+    torch.save(save_params, save_path)
+    logging.info(f"Training complete! Model saved to {save_path}.")
 
 
 if __name__ == "__main__":
