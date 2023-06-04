@@ -103,6 +103,8 @@ def train_sindit():
             "model": model.state_dict(),
             "opt": opt.state_dict(),
         }
+        if not os.path.exists("./models"):
+            os.makedirs("./models")
         save_path = f"./models/{class_names[i]}.pt"
         torch.save(save_params, save_path)
 
