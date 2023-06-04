@@ -1,0 +1,321 @@
+[2023-05-19 21:16:08,644] Starting program on cuda:0
+[2023-05-19 21:16:09,050] Data created with 2 images
+[2023-05-19 21:16:10,016] Model created
+[2023-05-19 21:17:29,737] Starting program on cuda:0
+[2023-05-19 21:17:29,739] Data created with 2 images
+[2023-05-19 21:17:30,095] Model created
+[2023-05-19 21:17:30,736] Diffusion created with loss: LossType.MSE
+[2023-05-19 21:17:30,737] 1 models created
+[2023-05-22 08:38:29,123] Starting program on cuda:0
+[2023-05-22 08:38:29,516] Data created with 2 images
+[2023-05-22 08:38:30,281] Model created
+[2023-05-22 08:38:35,574] Diffusion created with loss: LossType.MSE
+[2023-05-22 08:38:35,574] 1 models created
+[2023-05-22 08:38:35,574] Sampling images
+[2023-05-22 08:55:09,347] Starting program on cuda:0
+[2023-05-22 08:55:09,350] Data created with 2 images
+[2023-05-22 08:55:09,697] Model created
+[2023-05-22 08:55:10,199] Diffusion created with loss: LossType.MSE
+[2023-05-22 08:55:10,199] 1 models created
+[2023-05-22 08:55:10,199] Sampling images
+[2023-05-23 13:44:10,878] Starting program on cuda:0
+[2023-05-23 13:44:11,193] Data created with 2 images
+[2023-05-23 13:44:12,025] Model created
+[2023-05-23 13:44:17,006] Diffusion created with loss: LossType.MSE
+[2023-05-23 13:44:17,006] 1 models created
+[2023-05-23 13:44:17,006] Sampling images
+[2023-05-24 06:49:56,566] Starting program on cuda:0
+[2023-05-24 06:49:56,882] Data created with 2 images
+[2023-05-24 06:49:57,797] Model created
+[2023-05-24 06:50:02,754] Diffusion created with loss: LossType.MSE
+[2023-05-24 06:50:02,754] 1 models created
+[2023-05-24 06:50:02,754] Sampling images
+[2023-05-24 07:31:49,938] Starting program on cuda:0
+[2023-05-24 07:31:49,954] Data created with 2 images
+[2023-05-24 07:31:50,315] Model created
+[2023-05-24 07:31:50,817] Diffusion created with loss: LossType.MSE
+[2023-05-24 07:31:50,817] 1 models created
+[2023-05-24 07:31:50,817] Sampling images
+[2023-05-24 07:51:46,796] Starting program on cuda:0
+[2023-05-24 07:51:46,796] Data created with 2 images
+[2023-05-24 07:51:47,267] Model created
+[2023-05-24 07:51:47,816] Diffusion created with loss: LossType.MSE
+[2023-05-24 07:51:47,816] 1 models created
+[2023-05-24 07:51:47,816] Sampling images
+[2023-05-25 10:02:47,081] Starting program on cuda:0
+[2023-05-25 10:02:47,439] Data created with 2 images
+[2023-05-25 10:02:48,308] Model created
+[2023-05-25 10:02:53,659] Diffusion created with loss: LossType.MSE
+[2023-05-25 10:02:53,659] 1 models created
+[2023-05-25 10:02:53,659] Sampling images
+[2023-05-25 13:59:00,075] Starting program on cuda:0
+[2023-05-25 13:59:00,075] Data created with 2 images
+[2023-05-25 13:59:00,485] Model created
+[2023-05-25 13:59:01,303] Diffusion created with loss: LossType.MSE
+[2023-05-25 13:59:01,303] 1 models created
+[2023-05-25 13:59:01,303] Sampling images
+[2023-05-25 13:59:24,864] Starting program on cuda:0
+[2023-05-25 13:59:24,868] Data created with 2 images
+[2023-05-25 13:59:25,798] Model created
+[2023-05-25 13:59:25,798] Diffusion created with loss: LossType.MSE
+[2023-05-25 13:59:25,798] Schedule sampler created
+[2023-05-25 13:59:26,152] tag: Orientation (274) - type: short (3) - value: b'\x00\x01'
+[2023-05-25 13:59:26,152] tag: XResolution (282) - type: rational (5) Tag Location: 34 - Data Location: 98 - value: b"\x00-\xc6\xc0\x00\x00'\x10"
+[2023-05-25 13:59:26,152] tag: YResolution (283) - type: rational (5) Tag Location: 46 - Data Location: 106 - value: b"\x00-\xc6\xc0\x00\x00'\x10"
+[2023-05-25 13:59:26,167] tag: ResolutionUnit (296) - type: short (3) - value: b'\x00\x02'
+[2023-05-25 13:59:26,167] tag: Software (305) - type: string (2) Tag Location: 70 - Data Location: 114 - value: b'Adobe Photoshop CS5 Macintosh\x00'
+[2023-05-25 13:59:26,167] tag: DateTime (306) - type: string (2) Tag Location: 82 - Data Location: 144 - value: b'2013:02:06 15:33:41\x00'
+[2023-05-25 13:59:26,167] tag: ExifIFD (34665) - type: long (4) - value: b'\x00\x00\x00\xa4'
+[2023-05-25 13:59:26,678] Training on image 1 with shape torch.Size([1, 3, 32, 32])
+[2023-05-25 14:01:31,938] Starting program on cuda:0
+[2023-05-25 14:01:31,938] Data created with 2 images
+[2023-05-25 14:01:32,350] Model created
+[2023-05-25 14:01:33,200] Diffusion created with loss: LossType.MSE
+[2023-05-25 14:01:33,200] 1 models created
+[2023-05-25 14:01:33,200] Sampling images
+[2023-05-25 14:17:54,410] Starting program on cpu
+[2023-05-25 14:17:54,536] Data created with 2 images
+[2023-05-25 14:17:54,898] Model created
+[2023-05-25 14:17:55,180] Diffusion created with loss: LossType.MSE
+[2023-05-25 14:17:55,180] 1 models created
+[2023-05-25 14:17:55,180] Sampling images
+[2023-05-25 14:21:21,643] Starting program on cpu
+[2023-05-25 14:21:21,643] Data created with 2 images
+[2023-05-25 14:21:21,965] Model created
+[2023-05-25 14:21:22,184] Diffusion created with loss: LossType.MSE
+[2023-05-25 14:21:22,184] 1 models created
+[2023-05-25 14:21:22,184] Sampling images
+[2023-05-25 14:22:04,921] Starting program on cpu
+[2023-05-25 14:22:04,921] Data created with 2 images
+[2023-05-25 14:22:05,251] Model created
+[2023-05-25 14:22:05,486] Diffusion created with loss: LossType.MSE
+[2023-05-25 14:22:05,486] 1 models created
+[2023-05-25 14:22:05,486] Sampling images
+[2023-05-25 14:24:28,611] Starting program on cpu
+[2023-05-25 14:24:28,627] Data created with 2 images
+[2023-05-25 14:24:28,957] Model created
+[2023-05-25 14:24:29,177] Diffusion created with loss: LossType.MSE
+[2023-05-25 14:24:29,177] 1 models created
+[2023-05-25 14:24:29,177] Sampling images
+[2023-05-25 14:24:43,253] Starting program on cpu
+[2023-05-25 14:24:43,269] Data created with 2 images
+[2023-05-25 14:24:43,599] Model created
+[2023-05-25 14:24:43,803] Diffusion created with loss: LossType.MSE
+[2023-05-25 14:24:43,803] 1 models created
+[2023-05-25 14:24:43,803] Sampling images
+[2023-05-25 14:32:33,946] Starting program on cpu
+[2023-05-25 14:32:33,946] Data created with 2 images
+[2023-05-25 14:32:34,276] Model created
+[2023-05-25 14:32:34,495] Diffusion created with loss: LossType.MSE
+[2023-05-25 14:32:34,495] 1 models created
+[2023-05-25 14:32:34,495] Sampling images
+[2023-05-25 14:33:24,138] Starting program on cuda:0
+[2023-05-25 14:33:24,138] Data created with 2 images
+[2023-05-25 14:33:25,005] Model created
+[2023-05-25 14:33:25,005] Diffusion created with loss: LossType.MSE
+[2023-05-25 14:33:25,005] Schedule sampler created
+[2023-05-25 14:33:25,021] tag: Orientation (274) - type: short (3) - value: b'\x00\x01'
+[2023-05-25 14:33:25,021] tag: XResolution (282) - type: rational (5) Tag Location: 34 - Data Location: 98 - value: b"\x00-\xc6\xc0\x00\x00'\x10"
+[2023-05-25 14:33:25,021] tag: YResolution (283) - type: rational (5) Tag Location: 46 - Data Location: 106 - value: b"\x00-\xc6\xc0\x00\x00'\x10"
+[2023-05-25 14:33:25,021] tag: ResolutionUnit (296) - type: short (3) - value: b'\x00\x02'
+[2023-05-25 14:33:25,021] tag: Software (305) - type: string (2) Tag Location: 70 - Data Location: 114 - value: b'Adobe Photoshop CS5 Macintosh\x00'
+[2023-05-25 14:33:25,021] tag: DateTime (306) - type: string (2) Tag Location: 82 - Data Location: 144 - value: b'2013:02:06 15:33:41\x00'
+[2023-05-25 14:33:25,021] tag: ExifIFD (34665) - type: long (4) - value: b'\x00\x00\x00\xa4'
+[2023-05-25 14:35:15,169] Starting program on cpu
+[2023-05-25 14:35:15,185] Data created with 2 images
+[2023-05-25 14:35:15,503] Model created
+[2023-05-25 14:35:15,775] Diffusion created with loss: LossType.MSE
+[2023-05-25 14:35:15,775] 1 models created
+[2023-05-25 14:35:15,775] Sampling images
+[2023-05-25 15:06:27,116] Starting program on cuda:0
+[2023-05-25 15:06:27,116] Data created with 2 images
+[2023-05-25 15:06:27,995] Model created
+[2023-05-25 15:06:27,995] Diffusion created with loss: LossType.MSE
+[2023-05-25 15:06:27,995] Schedule sampler created
+[2023-05-25 15:06:28,011] tag: Orientation (274) - type: short (3) - value: b'\x00\x01'
+[2023-05-25 15:06:28,011] tag: XResolution (282) - type: rational (5) Tag Location: 34 - Data Location: 98 - value: b"\x00-\xc6\xc0\x00\x00'\x10"
+[2023-05-25 15:06:28,011] tag: YResolution (283) - type: rational (5) Tag Location: 46 - Data Location: 106 - value: b"\x00-\xc6\xc0\x00\x00'\x10"
+[2023-05-25 15:06:28,011] tag: ResolutionUnit (296) - type: short (3) - value: b'\x00\x02'
+[2023-05-25 15:06:28,011] tag: Software (305) - type: string (2) Tag Location: 70 - Data Location: 114 - value: b'Adobe Photoshop CS5 Macintosh\x00'
+[2023-05-25 15:06:28,011] tag: DateTime (306) - type: string (2) Tag Location: 82 - Data Location: 144 - value: b'2013:02:06 15:33:41\x00'
+[2023-05-25 15:06:28,011] tag: ExifIFD (34665) - type: long (4) - value: b'\x00\x00\x00\xa4'
+[2023-05-25 15:06:28,058] Training on image 1 with shape torch.Size([1, 3, 32, 32])
+[2023-05-25 15:12:46,045] Starting program on cuda:0
+[2023-05-25 15:12:46,045] Data created with 2 images
+[2023-05-25 15:12:46,745] Model created
+[2023-05-25 15:12:46,745] Diffusion created with loss: LossType.MSE
+[2023-05-25 15:12:46,745] Schedule sampler created
+[2023-05-25 15:12:46,760] tag: Orientation (274) - type: short (3) - value: b'\x00\x01'
+[2023-05-25 15:12:46,760] tag: XResolution (282) - type: rational (5) Tag Location: 34 - Data Location: 98 - value: b"\x00-\xc6\xc0\x00\x00'\x10"
+[2023-05-25 15:12:46,760] tag: YResolution (283) - type: rational (5) Tag Location: 46 - Data Location: 106 - value: b"\x00-\xc6\xc0\x00\x00'\x10"
+[2023-05-25 15:12:46,760] tag: ResolutionUnit (296) - type: short (3) - value: b'\x00\x02'
+[2023-05-25 15:12:46,760] tag: Software (305) - type: string (2) Tag Location: 70 - Data Location: 114 - value: b'Adobe Photoshop CS5 Macintosh\x00'
+[2023-05-25 15:12:46,760] tag: DateTime (306) - type: string (2) Tag Location: 82 - Data Location: 144 - value: b'2013:02:06 15:33:41\x00'
+[2023-05-25 15:12:46,760] tag: ExifIFD (34665) - type: long (4) - value: b'\x00\x00\x00\xa4'
+[2023-05-25 15:12:46,807] Training on image 1 with shape torch.Size([1, 3, 32, 32])
+[2023-05-25 15:12:50,283] tag: Orientation (274) - type: short (3) - value: b'\x00\x06'
+[2023-05-25 15:12:50,283] tag: ExifIFD (34665) - type: long (4) - value: b'\x00\x00\x00&'
+[2023-05-25 15:12:50,534] Training on image 2 with shape torch.Size([1, 3, 32, 32])
+[2023-05-25 15:12:51,272] Training complete!
+[2023-05-25 15:13:21,001] Starting program on cpu
+[2023-05-25 15:13:21,001] Data created with 2 images
+[2023-05-25 15:13:21,331] Model created
+[2023-05-25 15:13:21,572] Diffusion created with loss: LossType.MSE
+[2023-05-25 15:13:21,572] 1 models created
+[2023-05-25 15:13:21,572] Sampling images
+[2023-05-25 15:18:24,436] Starting program on cpu
+[2023-05-25 15:18:24,436] Data created with 2 images
+[2023-05-25 15:18:24,766] Model created
+[2023-05-25 15:18:24,986] Diffusion created with loss: LossType.MSE
+[2023-05-25 15:18:24,986] 1 models created
+[2023-05-25 15:18:24,986] Sampling images
+[2023-05-25 15:18:44,457] Starting program on cpu
+[2023-05-25 15:18:44,457] Data created with 2 images
+[2023-05-25 15:18:44,827] Model created
+[2023-05-25 15:18:45,063] Diffusion created with loss: LossType.MSE
+[2023-05-25 15:18:45,063] 1 models created
+[2023-05-25 15:18:45,063] Sampling images
+[2023-05-25 15:20:14,886] Starting program on cpu
+[2023-05-25 15:20:14,902] Data created with 2 images
+[2023-05-25 15:20:15,216] Model created
+[2023-05-25 15:20:15,467] Diffusion created with loss: LossType.MSE
+[2023-05-25 15:20:15,467] 1 models created
+[2023-05-25 15:20:15,467] Sampling images
+[2023-05-25 15:20:57,635] Starting program on cpu
+[2023-05-25 15:20:57,635] Data created with 2 images
+[2023-05-25 15:20:57,969] Model created
+[2023-05-25 15:20:58,188] Diffusion created with loss: LossType.MSE
+[2023-05-25 15:20:58,188] 1 models created
+[2023-05-25 15:20:58,188] Sampling images
+[2023-05-25 15:22:05,944] Starting program on cpu
+[2023-05-25 15:22:05,959] Data created with 2 images
+[2023-05-25 15:22:06,415] Model created
+[2023-05-25 15:22:06,714] Diffusion created with loss: LossType.MSE
+[2023-05-25 15:22:06,714] 1 models created
+[2023-05-25 15:22:06,714] Sampling images
+[2023-05-25 15:22:42,771] Sampling complete
+[2023-05-25 15:31:13,672] Starting program on cpu
+[2023-05-25 15:31:13,672] Data created with 2 images
+[2023-05-25 15:31:14,001] Model created
+[2023-05-25 15:31:14,206] Diffusion created with loss: LossType.MSE
+[2023-05-25 15:31:14,206] 1 models created
+[2023-05-25 15:31:14,206] Sampling images
+[2023-05-25 15:31:57,644] Sampling complete
+[2023-05-25 15:33:54,104] Starting program on cpu
+[2023-05-25 15:33:54,104] Data created with 2 images
+[2023-05-25 15:33:54,457] Model created
+[2023-05-25 15:33:54,701] Diffusion created with loss: LossType.MSE
+[2023-05-25 15:33:54,701] 1 models created
+[2023-05-25 15:33:54,701] Sampling images
+[2023-05-25 15:36:06,926] Starting program on cpu
+[2023-05-25 15:36:06,936] Data created with 2 images
+[2023-05-25 15:36:07,374] Model created
+[2023-05-25 15:36:07,734] Diffusion created with loss: LossType.MSE
+[2023-05-25 15:36:07,767] 1 models created
+[2023-05-25 15:36:07,767] Sampling images
+[2023-05-25 15:36:55,254] Sampling complete
+[2023-05-31 08:11:43,334] Starting program on cuda:0
+[2023-05-31 08:11:43,728] Data created with 1 images
+[2023-05-31 08:11:54,006] Model created
+[2023-05-31 08:11:54,023] Diffusion created with loss: LossType.MSE
+[2023-05-31 08:11:54,023] Schedule sampler created
+[2023-05-31 08:11:54,344] tag: Orientation (274) - type: short (3) - value: b'\x00\x01'
+[2023-05-31 08:11:54,344] tag: XResolution (282) - type: rational (5) Tag Location: 34 - Data Location: 98 - value: b"\x00-\xc6\xc0\x00\x00'\x10"
+[2023-05-31 08:11:54,345] tag: YResolution (283) - type: rational (5) Tag Location: 46 - Data Location: 106 - value: b"\x00-\xc6\xc0\x00\x00'\x10"
+[2023-05-31 08:11:54,345] tag: ResolutionUnit (296) - type: short (3) - value: b'\x00\x02'
+[2023-05-31 08:11:54,346] tag: Software (305) - type: string (2) Tag Location: 70 - Data Location: 114 - value: b'Adobe Photoshop CS5 Macintosh\x00'
+[2023-05-31 08:11:54,346] tag: DateTime (306) - type: string (2) Tag Location: 82 - Data Location: 144 - value: b'2013:02:06 15:33:41\x00'
+[2023-05-31 08:11:54,346] tag: ExifIFD (34665) - type: long (4) - value: b'\x00\x00\x00\xa4'
+[2023-05-31 08:11:54,837] Training on image 1 with shape torch.Size([1, 3, 32, 32])
+[2023-05-31 08:14:56,605] Starting program on cuda:0
+[2023-05-31 08:14:56,607] Data created with 1 images
+[2023-05-31 08:15:06,789] Model created
+[2023-05-31 08:15:06,791] Diffusion created with loss: LossType.MSE
+[2023-05-31 08:15:06,792] Schedule sampler created
+[2023-05-31 08:15:06,802] tag: Orientation (274) - type: short (3) - value: b'\x00\x01'
+[2023-05-31 08:15:06,802] tag: XResolution (282) - type: rational (5) Tag Location: 34 - Data Location: 98 - value: b"\x00-\xc6\xc0\x00\x00'\x10"
+[2023-05-31 08:15:06,802] tag: YResolution (283) - type: rational (5) Tag Location: 46 - Data Location: 106 - value: b"\x00-\xc6\xc0\x00\x00'\x10"
+[2023-05-31 08:15:06,802] tag: ResolutionUnit (296) - type: short (3) - value: b'\x00\x02'
+[2023-05-31 08:15:06,803] tag: Software (305) - type: string (2) Tag Location: 70 - Data Location: 114 - value: b'Adobe Photoshop CS5 Macintosh\x00'
+[2023-05-31 08:15:06,803] tag: DateTime (306) - type: string (2) Tag Location: 82 - Data Location: 144 - value: b'2013:02:06 15:33:41\x00'
+[2023-05-31 08:15:06,803] tag: ExifIFD (34665) - type: long (4) - value: b'\x00\x00\x00\xa4'
+[2023-05-31 08:15:06,873] Training on image 1 with shape torch.Size([1, 3, 32, 32])
+[2023-05-31 08:23:55,167] Starting program on cpu
+[2023-05-31 08:23:55,169] Data created with 1 images
+[2023-05-31 08:24:03,714] Model created
+[2023-05-31 08:24:03,717] Diffusion created with loss: LossType.MSE
+[2023-05-31 08:24:03,717] Schedule sampler created
+[2023-05-31 08:24:03,732] tag: Orientation (274) - type: short (3) - value: b'\x00\x01'
+[2023-05-31 08:24:03,732] tag: XResolution (282) - type: rational (5) Tag Location: 34 - Data Location: 98 - value: b"\x00-\xc6\xc0\x00\x00'\x10"
+[2023-05-31 08:24:03,732] tag: YResolution (283) - type: rational (5) Tag Location: 46 - Data Location: 106 - value: b"\x00-\xc6\xc0\x00\x00'\x10"
+[2023-05-31 08:24:03,733] tag: ResolutionUnit (296) - type: short (3) - value: b'\x00\x02'
+[2023-05-31 08:24:03,733] tag: Software (305) - type: string (2) Tag Location: 70 - Data Location: 114 - value: b'Adobe Photoshop CS5 Macintosh\x00'
+[2023-05-31 08:24:03,843] tag: DateTime (306) - type: string (2) Tag Location: 82 - Data Location: 144 - value: b'2013:02:06 15:33:41\x00'
+[2023-05-31 08:24:03,844] tag: ExifIFD (34665) - type: long (4) - value: b'\x00\x00\x00\xa4'
+[2023-05-31 08:24:03,950] Training on image 1 with shape torch.Size([1, 3, 32, 32])
+[2023-05-31 08:25:59,709] Training complete!
+[2023-05-31 08:30:25,315] Starting program on cpu
+[2023-05-31 08:30:25,354] Data created with 1 images
+[2023-05-31 08:30:25,734] Model created
+[2023-05-31 08:34:26,214] Starting program on cpu
+[2023-05-31 08:34:26,217] Data created with 1 images
+[2023-05-31 08:34:26,590] Model created
+[2023-05-31 08:34:44,253] Starting program on cpu
+[2023-05-31 08:34:44,256] Data created with 1 images
+[2023-05-31 08:34:44,663] Model created
+[2023-05-31 08:37:33,020] Starting program on cpu
+[2023-05-31 08:37:33,022] Data created with 1 images
+[2023-05-31 08:37:42,675] Model created
+[2023-05-31 08:37:42,690] Diffusion created with loss: LossType.MSE
+[2023-05-31 08:37:42,691] Schedule sampler created
+[2023-05-31 08:37:42,981] tag: Orientation (274) - type: short (3) - value: b'\x00\x01'
+[2023-05-31 08:37:42,981] tag: XResolution (282) - type: rational (5) Tag Location: 34 - Data Location: 98 - value: b"\x00-\xc6\xc0\x00\x00'\x10"
+[2023-05-31 08:37:42,981] tag: YResolution (283) - type: rational (5) Tag Location: 46 - Data Location: 106 - value: b"\x00-\xc6\xc0\x00\x00'\x10"
+[2023-05-31 08:37:42,981] tag: ResolutionUnit (296) - type: short (3) - value: b'\x00\x02'
+[2023-05-31 08:37:42,981] tag: Software (305) - type: string (2) Tag Location: 70 - Data Location: 114 - value: b'Adobe Photoshop CS5 Macintosh\x00'
+[2023-05-31 08:37:42,982] tag: DateTime (306) - type: string (2) Tag Location: 82 - Data Location: 144 - value: b'2013:02:06 15:33:41\x00'
+[2023-05-31 08:37:42,982] tag: ExifIFD (34665) - type: long (4) - value: b'\x00\x00\x00\xa4'
+[2023-05-31 08:37:43,564] Training on image 1 with shape torch.Size([1, 3, 32, 32])
+[2023-05-31 08:39:35,449] Training complete!
+[2023-05-31 09:10:02,785] Starting program on cpu
+[2023-05-31 09:10:03,200] Data created with 1 images
+[2023-05-31 09:10:14,464] Model created
+[2023-05-31 09:11:49,481] Diffusion created with loss: LossType.MSE
+[2023-05-31 09:11:49,481] 1 models created
+[2023-05-31 09:11:49,481] Sampling images
+[2023-05-31 09:21:47,102] Sampling complete
+[2023-05-31 10:26:10,594] Starting program on cpu
+[2023-05-31 10:26:10,628] Data created with 1 images
+[2023-05-31 10:26:18,835] Model created
+[2023-05-31 10:27:49,360] Diffusion created with loss: LossType.MSE
+[2023-05-31 10:27:49,360] 1 models created
+[2023-05-31 10:27:49,362] Sampling images
+[2023-05-31 10:38:32,656] Sampling complete
+[2023-05-31 10:50:51,113] Starting program on cpu
+[2023-05-31 10:50:51,116] Data created with 1 images
+[2023-05-31 10:50:59,475] Model created
+[2023-05-31 10:50:59,478] Diffusion created with loss: LossType.MSE
+[2023-05-31 10:50:59,478] Schedule sampler created
+[2023-05-31 10:50:59,766] tag: Orientation (274) - type: short (3) - value: b'\x00\x01'
+[2023-05-31 10:50:59,766] tag: XResolution (282) - type: rational (5) Tag Location: 34 - Data Location: 98 - value: b"\x00-\xc6\xc0\x00\x00'\x10"
+[2023-05-31 10:50:59,766] tag: YResolution (283) - type: rational (5) Tag Location: 46 - Data Location: 106 - value: b"\x00-\xc6\xc0\x00\x00'\x10"
+[2023-05-31 10:50:59,766] tag: ResolutionUnit (296) - type: short (3) - value: b'\x00\x02'
+[2023-05-31 10:50:59,766] tag: Software (305) - type: string (2) Tag Location: 70 - Data Location: 114 - value: b'Adobe Photoshop CS5 Macintosh\x00'
+[2023-05-31 10:50:59,766] tag: DateTime (306) - type: string (2) Tag Location: 82 - Data Location: 144 - value: b'2013:02:06 15:33:41\x00'
+[2023-05-31 10:50:59,766] tag: ExifIFD (34665) - type: long (4) - value: b'\x00\x00\x00\xa4'
+[2023-05-31 10:51:00,205] Training on image 1 with shape torch.Size([1, 3, 64, 64])
+[2023-05-31 10:52:50,454] Training complete!
+[2023-06-04 07:38:46,779] Starting program on cpu
+[2023-06-04 07:38:47,234] Data created with 1 images
+[2023-06-04 07:38:56,213] Model created
+[2023-06-04 07:38:56,265] Diffusion created with loss: LossType.MSE
+[2023-06-04 07:38:56,265] Schedule sampler created
+[2023-06-04 07:38:56,428] tag: Orientation (274) - type: short (3) - value: b'\x00\x01'
+[2023-06-04 07:38:56,429] tag: XResolution (282) - type: rational (5) Tag Location: 34 - Data Location: 98 - value: b"\x00-\xc6\xc0\x00\x00'\x10"
+[2023-06-04 07:38:56,429] tag: YResolution (283) - type: rational (5) Tag Location: 46 - Data Location: 106 - value: b"\x00-\xc6\xc0\x00\x00'\x10"
+[2023-06-04 07:38:56,429] tag: ResolutionUnit (296) - type: short (3) - value: b'\x00\x02'
+[2023-06-04 07:38:56,429] tag: Software (305) - type: string (2) Tag Location: 70 - Data Location: 114 - value: b'Adobe Photoshop CS5 Macintosh\x00'
+[2023-06-04 07:38:56,430] tag: DateTime (306) - type: string (2) Tag Location: 82 - Data Location: 144 - value: b'2013:02:06 15:33:41\x00'
+[2023-06-04 07:38:56,430] tag: ExifIFD (34665) - type: long (4) - value: b'\x00\x00\x00\xa4'
+[2023-06-04 07:38:56,968] Training on image 1 with shape torch.Size([1, 3, 64, 64])
+[2023-06-04 07:40:52,860] Training complete!
