@@ -10,7 +10,7 @@ import os
 
 def sample_sindit():
     NUM_SAMPLES = 10000
-    input_size = 64
+    input_size = 32
     FULL_SIZE = (input_size, input_size)
     MIN_SIZE = 25
     MAX_SIZE = 250
@@ -26,12 +26,12 @@ def sample_sindit():
                         format="[%(asctime)s] %(message)s")
     logging.getLogger().addHandler(logging.StreamHandler())
 
-    # if torch.cuda.is_available():
-    #     device = "cuda:0"
-    #     torch.cuda.set_device(device)
-    # else:
-    #     device = "cpu"
-    device = "cpu"  # also edit like 268 on gaussian_diffusion.py
+    if torch.cuda.is_available():
+        device = "cuda:0"
+        torch.cuda.set_device(device)
+    else:
+        device = "cpu"
+    # device = "cpu"  # also edit like 268 on gaussian_diffusion.py
     logging.info(f"Starting program on {device}")
     seed = 42
     torch.manual_seed(seed)

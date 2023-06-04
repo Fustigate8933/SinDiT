@@ -21,13 +21,13 @@ def train_sindit():
         torch.cuda.set_device(device)
     else:
         device = "cpu"
-    device = "cpu"  # edit line 199 in gaussian_diffusion.py
+    # device = "cpu"  # edit line 199 in gaussian_diffusion.py
 
     logging.info(f"Starting program on {device}")
     seed = 42
     torch.manual_seed(seed)
 
-    input_size = 64
+    input_size = 32
 
     img_transforms = transforms.Compose([
         transforms.ToTensor(),
@@ -73,8 +73,7 @@ def train_sindit():
     start_time = time()
 
     for i in range(len(data)):
-        batch, cond = next(
-            dataloader)  # batch: because only training on 1 image a time, shape is [1, 3, input_size, input_size]
+        batch, cond = next(dataloader)  # batch: because only training on 1 image a time, shape is [1, 3, input_size, input_size]
         cond = torch.tensor([1], device=device)
         logging.info(f"Training on image {i + 1} with shape {batch.shape}")
         batch = batch.to(device)
