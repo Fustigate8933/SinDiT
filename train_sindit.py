@@ -23,7 +23,7 @@ def random_crop_and_pad(image, crop_ratio=0.77):
     return padded_image
 
 
-def train_sindit(data_path="./data", checkpoint_interval=epochs, resume_checkpoint=None):
+def train_sindit(data_path="./data", checkpoint_interval=1000, resume_checkpoint=None):
     logging.basicConfig(filename="./training_log.txt", level=logging.DEBUG, filemode="a",
                         format="[%(asctime)s] %(message)s")
     logging.getLogger().addHandler(logging.StreamHandler())
