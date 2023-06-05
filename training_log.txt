@@ -4658,3 +4658,353 @@
 [2023-06-05 06:36:52,247] 1 models created
 [2023-06-05 06:36:52,247] Sampling images
 [2023-06-05 06:50:10,372] Sampling complete
+[2023-06-05 09:13:59,967] Starting program on cuda:0
+[2023-06-05 09:13:59,977] Data created with 2000 images
+[2023-06-05 09:14:08,349] Model created
+[2023-06-05 09:14:08,350] Diffusion created with loss: LossType.MSE
+[2023-06-05 09:14:08,350] Schedule sampler created
+[2023-06-05 09:14:08,351] Starting Training...
+[2023-06-05 09:16:30,170] Starting program on cuda:0
+[2023-06-05 09:16:30,179] Data created with 2000 images
+[2023-06-05 09:16:30,657] Model created
+[2023-06-05 09:16:30,658] Diffusion created with loss: LossType.MSE
+[2023-06-05 09:16:30,658] Schedule sampler created
+[2023-06-05 09:16:30,659] Starting Training...
+[2023-06-05 09:21:43,085] Training complete! Model saved to ./models/mountain.pt.
+[2023-06-05 09:23:58,342] Starting program on cuda:0
+[2023-06-05 09:24:08,261] Model created
+[2023-06-05 09:24:31,372] Starting program on cuda:0
+[2023-06-05 09:24:31,863] Model created
+[2023-06-05 09:24:32,443] Diffusion created with loss: LossType.MSE
+[2023-06-05 09:24:32,443] 1 models created
+[2023-06-05 09:24:32,443] Sampling images
+[2023-06-05 09:26:02,150] Starting program on cuda:0
+[2023-06-05 09:26:02,597] Model created
+[2023-06-05 09:26:03,150] Diffusion created with loss: LossType.MSE
+[2023-06-05 09:26:03,150] 1 models created
+[2023-06-05 09:26:03,151] Sampling images
+[2023-06-05 09:26:26,842] Sampling complete
+[2023-06-05 09:28:46,912] Starting program on cuda:0
+[2023-06-05 09:28:46,925] Data created with 2000 images
+[2023-06-05 09:28:47,504] Model created
+[2023-06-05 09:28:47,508] Diffusion created with loss: LossType.MSE
+[2023-06-05 09:28:47,509] Schedule sampler created
+[2023-06-05 09:28:49,286] Resumed training from checkpoint: ./models/mountain.pt
+[2023-06-05 09:28:49,286] Starting Training...
+[2023-06-05 09:28:51,163] Checkpoint saved at iteration 0
+[2023-06-05 09:31:28,267] Checkpoint saved at iteration 1000
+[2023-06-05 09:34:00,453] Training complete! Final model saved to ./models/final_model.pt.
+[2023-06-05 10:13:14,971] Starting program on cuda:0
+[2023-06-05 10:13:14,973] Data created with 1 images
+[2023-06-05 10:13:15,602] Model created
+[2023-06-05 10:13:15,702] Diffusion created with loss: LossType.MSE
+[2023-06-05 10:13:15,703] Schedule sampler created
+[2023-06-05 10:13:15,704] Starting Training...
+[2023-06-05 10:14:34,775] Starting program on cuda:0
+[2023-06-05 10:14:34,777] Data created with 1 images
+[2023-06-05 10:14:35,322] Model created
+[2023-06-05 10:14:35,324] Diffusion created with loss: LossType.MSE
+[2023-06-05 10:14:35,324] Schedule sampler created
+[2023-06-05 10:14:35,325] Starting Training...
+[2023-06-05 11:07:55,342] Starting program on cuda:0
+[2023-06-05 11:07:55,342] Data created with 1 images
+[2023-06-05 11:07:55,981] Model created
+[2023-06-05 11:07:55,981] Diffusion created with loss: LossType.MSE
+[2023-06-05 11:07:55,981] Schedule sampler created
+[2023-06-05 11:07:55,981] Starting Training...
+[2023-06-05 11:10:23,995] Starting program on cuda:0
+[2023-06-05 11:10:23,995] Data created with 1 images
+[2023-06-05 11:10:24,617] Model created
+[2023-06-05 11:10:24,617] Diffusion created with loss: LossType.MSE
+[2023-06-05 11:10:24,617] Schedule sampler created
+[2023-06-05 11:10:24,617] Starting Training...
+[2023-06-05 11:11:21,256] Starting program on cuda:0
+[2023-06-05 11:11:21,256] Data created with 1 images
+[2023-06-05 11:11:21,995] Model created
+[2023-06-05 11:11:21,998] Diffusion created with loss: LossType.MSE
+[2023-06-05 11:11:21,998] Schedule sampler created
+[2023-06-05 11:11:22,000] Starting Training...
+[2023-06-05 11:13:15,824] Starting program on cuda:0
+[2023-06-05 11:13:15,826] Data created with 1 images
+[2023-06-05 11:13:16,406] Model created
+[2023-06-05 11:13:16,406] Diffusion created with loss: LossType.MSE
+[2023-06-05 11:13:16,406] Schedule sampler created
+[2023-06-05 11:13:16,406] Starting Training...
+[2023-06-05 12:39:32,144] Starting program on cuda:0
+[2023-06-05 12:39:32,161] Data created with 1 images
+[2023-06-05 12:39:32,979] Model created
+[2023-06-05 12:39:32,981] Diffusion created with loss: LossType.MSE
+[2023-06-05 12:39:32,981] Schedule sampler created
+[2023-06-05 12:39:32,981] Starting Training...
+[2023-06-05 12:40:11,581] Starting program on cuda:0
+[2023-06-05 12:40:11,583] Data created with 1 images
+[2023-06-05 12:40:12,185] Model created
+[2023-06-05 12:40:12,187] Diffusion created with loss: LossType.MSE
+[2023-06-05 12:40:12,187] Schedule sampler created
+[2023-06-05 12:40:12,188] Starting Training...
+[2023-06-05 12:41:22,248] Starting program on cuda:0
+[2023-06-05 12:41:22,250] Data created with 1 images
+[2023-06-05 12:41:22,881] Model created
+[2023-06-05 12:41:22,883] Diffusion created with loss: LossType.MSE
+[2023-06-05 12:41:22,884] Schedule sampler created
+[2023-06-05 12:41:22,885] Starting Training...
+[2023-06-05 12:42:21,464] Starting program on cuda:0
+[2023-06-05 12:42:21,466] Data created with 1 images
+[2023-06-05 12:42:22,068] Model created
+[2023-06-05 12:42:22,071] Diffusion created with loss: LossType.MSE
+[2023-06-05 12:42:22,071] Schedule sampler created
+[2023-06-05 12:42:22,073] Starting Training...
+[2023-06-05 12:46:47,459] Training complete! Final model saved to ./models/final_model.pt.
+[2023-06-05 12:59:47,077] Starting program on cuda:0
+[2023-06-05 12:59:47,079] Data created with 1 images
+[2023-06-05 12:59:47,762] Model created
+[2023-06-05 12:59:47,766] Diffusion created with loss: LossType.MSE
+[2023-06-05 12:59:47,766] Schedule sampler created
+[2023-06-05 12:59:47,768] Starting Training...
+[2023-06-05 13:06:34,694] Starting program on cuda:0
+[2023-06-05 13:06:35,307] Model created
+[2023-06-05 13:06:36,075] Diffusion created with loss: LossType.MSE
+[2023-06-05 13:06:36,076] 1 models created
+[2023-06-05 13:06:36,076] Sampling images
+[2023-06-05 13:07:14,219] Sampling complete
+[2023-06-05 13:09:47,968] Training complete! Final model saved to ./models/final_model.pt.
+[2023-06-05 13:10:30,213] Starting program on cuda:0
+[2023-06-05 13:10:30,703] Model created
+[2023-06-05 13:10:31,310] Diffusion created with loss: LossType.MSE
+[2023-06-05 13:10:31,310] 1 models created
+[2023-06-05 13:10:31,310] Sampling images
+[2023-06-05 13:10:58,165] Sampling complete
+[2023-06-05 13:11:48,493] Starting program on cuda:0
+[2023-06-05 13:11:48,495] Data created with 1 images
+[2023-06-05 13:11:49,149] Model created
+[2023-06-05 13:11:49,151] Diffusion created with loss: LossType.MSE
+[2023-06-05 13:11:49,152] Schedule sampler created
+[2023-06-05 13:11:49,153] Starting Training...
+[2023-06-05 13:12:36,295] Starting program on cuda:0
+[2023-06-05 13:12:36,877] Model created
+[2023-06-05 13:12:37,556] Diffusion created with loss: LossType.MSE
+[2023-06-05 13:12:37,556] 1 models created
+[2023-06-05 13:12:37,556] Sampling images
+[2023-06-05 13:13:11,309] Sampling complete
+[2023-06-05 13:14:45,761] Starting program on cuda:0
+[2023-06-05 13:14:46,352] Model created
+[2023-06-05 13:14:47,023] Diffusion created with loss: LossType.MSE
+[2023-06-05 13:14:47,023] 1 models created
+[2023-06-05 13:14:47,023] Sampling images
+[2023-06-05 13:15:25,829] Sampling complete
+[2023-06-05 15:03:49,242] Training complete! Final model saved to ./models/final_model.pt.
+[2023-06-05 15:32:03,434] Starting program on cuda:0
+[2023-06-05 15:32:03,852] Model created
+[2023-06-05 15:32:04,387] Diffusion created with loss: LossType.MSE
+[2023-06-05 15:32:04,387] 1 models created
+[2023-06-05 15:32:04,387] Sampling images
+[2023-06-05 15:32:27,976] Sampling complete
+[2023-06-05 15:33:24,319] Starting program on cuda:0
+[2023-06-05 15:33:24,750] Model created
+[2023-06-05 15:33:25,300] Diffusion created with loss: LossType.MSE
+[2023-06-05 15:33:25,300] 1 models created
+[2023-06-05 15:33:25,300] Sampling images
+[2023-06-05 15:33:50,054] Sampling complete
+[2023-06-05 15:46:18,759] Starting program on cuda:0
+[2023-06-05 15:46:19,443] Model created
+[2023-06-05 15:46:20,112] Diffusion created with loss: LossType.MSE
+[2023-06-05 15:46:20,112] 1 models created
+[2023-06-05 15:46:20,112] Sampling images
+[2023-06-05 15:46:47,006] Sampling complete
+[2023-06-05 15:47:10,690] Starting program on cuda:0
+[2023-06-05 15:47:11,212] Model created
+[2023-06-05 15:47:11,808] Diffusion created with loss: LossType.MSE
+[2023-06-05 15:47:11,808] 1 models created
+[2023-06-05 15:47:11,808] Sampling images
+[2023-06-05 16:00:21,679] Starting program on cuda:0
+[2023-06-05 16:00:22,125] Model created
+[2023-06-05 16:00:22,656] Diffusion created with loss: LossType.MSE
+[2023-06-05 16:00:22,656] 1 models created
+[2023-06-05 16:00:22,656] Sampling images
+[2023-06-05 16:00:42,820] Starting program on cuda:0
+[2023-06-05 16:00:43,258] Model created
+[2023-06-05 16:00:43,847] Diffusion created with loss: LossType.MSE
+[2023-06-05 16:00:43,847] 1 models created
+[2023-06-05 16:00:43,847] Sampling images
+[2023-06-05 17:00:27,074] Starting program on cuda:0
+[2023-06-05 17:00:27,076] Data created with 1 images
+[2023-06-05 17:00:27,076] Starting Training...
+[2023-06-05 17:01:42,903] Starting program on cuda:0
+[2023-06-05 17:01:42,905] Data created with 1 images
+[2023-06-05 17:01:42,905] Starting Training...
+[2023-06-05 17:02:09,511] Starting program on cuda:0
+[2023-06-05 17:02:09,512] Data created with 1 images
+[2023-06-05 17:02:09,512] Starting Training...
+[2023-06-05 17:02:26,484] Starting program on cuda:0
+[2023-06-05 17:02:26,486] Data created with 1 images
+[2023-06-05 17:02:26,486] Starting Training...
+[2023-06-05 17:02:54,474] Starting program on cuda:0
+[2023-06-05 17:02:54,477] Data created with 1 images
+[2023-06-05 17:02:54,477] Starting Training...
+[2023-06-05 17:03:27,627] Starting program on cuda:0
+[2023-06-05 17:03:27,628] Data created with 1 images
+[2023-06-05 17:03:27,628] Starting Training...
+[2023-06-05 17:05:27,965] Starting program on cuda:0
+[2023-06-05 17:05:27,967] Data created with 1 images
+[2023-06-05 17:05:27,967] Starting Training...
+[2023-06-05 17:07:20,157] Starting program on cuda:0
+[2023-06-05 17:07:20,159] Data created with 1 images
+[2023-06-05 17:07:20,160] Starting Training...
+[2023-06-05 17:14:06,799] Starting program on cuda:0
+[2023-06-05 17:14:06,801] Data created with 1 images
+[2023-06-05 17:14:06,801] Starting Training...
+[2023-06-05 17:14:08,625] Model created
+[2023-06-05 17:14:08,626] Diffusion created with loss: LossType.MSE
+[2023-06-05 17:14:08,627] Schedule sampler created
+[2023-06-05 17:14:36,014] Starting program on cuda:0
+[2023-06-05 17:14:36,016] Data created with 1 images
+[2023-06-05 17:14:36,017] Starting Training...
+[2023-06-05 17:14:37,207] Model created
+[2023-06-05 17:14:37,210] Diffusion created with loss: LossType.MSE
+[2023-06-05 17:14:37,211] Schedule sampler created
+[2023-06-05 17:14:48,628] Starting program on cuda:0
+[2023-06-05 17:14:48,630] Data created with 1 images
+[2023-06-05 17:14:48,630] Starting Training...
+[2023-06-05 17:15:36,491] Starting program on cuda:0
+[2023-06-05 17:15:36,492] Data created with 1 images
+[2023-06-05 17:15:36,493] Starting Training...
+[2023-06-05 17:15:37,808] Model created
+[2023-06-05 17:15:37,811] Diffusion created with loss: LossType.MSE
+[2023-06-05 17:15:37,812] Schedule sampler created
+[2023-06-05 17:15:53,754] Starting program on cuda:0
+[2023-06-05 17:15:53,756] Data created with 1 images
+[2023-06-05 17:15:53,756] Starting Training...
+[2023-06-05 17:15:55,134] Model created
+[2023-06-05 17:15:55,139] Diffusion created with loss: LossType.MSE
+[2023-06-05 17:15:55,140] Schedule sampler created
+[2023-06-05 17:16:12,587] Starting program on cuda:0
+[2023-06-05 17:16:12,588] Data created with 1 images
+[2023-06-05 17:16:12,589] Starting Training...
+[2023-06-05 17:16:13,654] Model created
+[2023-06-05 17:16:13,657] Diffusion created with loss: LossType.MSE
+[2023-06-05 17:16:13,658] Schedule sampler created
+[2023-06-05 17:16:29,580] Starting program on cuda:0
+[2023-06-05 17:16:29,582] Data created with 1 images
+[2023-06-05 17:16:29,582] Starting Training...
+[2023-06-05 17:16:30,596] Model created
+[2023-06-05 17:16:30,600] Diffusion created with loss: LossType.MSE
+[2023-06-05 17:16:30,600] Schedule sampler created
+[2023-06-05 17:17:15,437] Starting program on cuda:0
+[2023-06-05 17:17:15,439] Data created with 1 images
+[2023-06-05 17:17:15,439] Starting Training...
+[2023-06-05 17:17:17,241] Model created
+[2023-06-05 17:17:17,244] Diffusion created with loss: LossType.MSE
+[2023-06-05 17:17:17,244] Schedule sampler created
+[2023-06-05 17:17:38,982] Starting program on cuda:0
+[2023-06-05 17:17:38,983] Data created with 1 images
+[2023-06-05 17:17:38,984] Starting Training...
+[2023-06-05 17:17:39,584] Model created
+[2023-06-05 17:17:39,586] Diffusion created with loss: LossType.MSE
+[2023-06-05 17:17:39,586] Schedule sampler created
+[2023-06-05 17:19:44,846] Starting program on cuda:0
+[2023-06-05 17:19:44,848] Data created with 1 images
+[2023-06-05 17:19:44,848] Starting Training...
+[2023-06-05 17:19:45,494] Model created
+[2023-06-05 17:19:45,497] Diffusion created with loss: LossType.MSE
+[2023-06-05 17:19:45,497] Schedule sampler created
+[2023-06-05 17:20:17,452] Starting program on cuda:0
+[2023-06-05 17:20:17,453] Data created with 1 images
+[2023-06-05 17:20:17,453] Starting Training...
+[2023-06-05 17:20:18,062] Model created
+[2023-06-05 17:20:18,063] Diffusion created with loss: LossType.MSE
+[2023-06-05 17:20:18,064] Schedule sampler created
+[2023-06-05 17:21:42,594] Starting program on cuda:0
+[2023-06-05 17:21:42,596] Data created with 1 images
+[2023-06-05 17:21:42,596] Starting Training...
+[2023-06-05 17:21:43,218] Model created
+[2023-06-05 17:21:43,221] Diffusion created with loss: LossType.MSE
+[2023-06-05 17:21:43,221] Schedule sampler created
+[2023-06-05 17:22:56,319] Starting program on cuda:0
+[2023-06-05 17:22:56,321] Data created with 1 images
+[2023-06-05 17:22:56,321] Starting Training...
+[2023-06-05 17:22:56,941] Model created
+[2023-06-05 17:22:56,944] Diffusion created with loss: LossType.MSE
+[2023-06-05 17:22:56,944] Schedule sampler created
+[2023-06-05 17:23:34,634] Starting program on cuda:0
+[2023-06-05 17:23:34,636] Data created with 1 images
+[2023-06-05 17:23:34,637] Starting Training...
+[2023-06-05 17:23:35,232] Model created
+[2023-06-05 17:23:35,236] Diffusion created with loss: LossType.MSE
+[2023-06-05 17:23:35,236] Schedule sampler created
+[2023-06-05 17:24:43,412] Starting program on cuda:0
+[2023-06-05 17:24:43,413] Data created with 1 images
+[2023-06-05 17:24:43,414] Starting Training...
+[2023-06-05 17:24:44,019] Model created
+[2023-06-05 17:24:44,022] Diffusion created with loss: LossType.MSE
+[2023-06-05 17:24:44,022] Schedule sampler created
+[2023-06-05 17:24:55,599] Starting program on cuda:0
+[2023-06-05 17:24:55,601] Data created with 1 images
+[2023-06-05 17:24:55,601] Starting Training...
+[2023-06-05 17:24:56,193] Model created
+[2023-06-05 17:24:56,196] Diffusion created with loss: LossType.MSE
+[2023-06-05 17:24:56,196] Schedule sampler created
+[2023-06-05 17:25:16,593] Starting program on cuda:0
+[2023-06-05 17:25:16,595] Data created with 1 images
+[2023-06-05 17:25:16,595] Starting Training...
+[2023-06-05 17:25:17,220] Model created
+[2023-06-05 17:25:17,223] Diffusion created with loss: LossType.MSE
+[2023-06-05 17:25:17,223] Schedule sampler created
+[2023-06-05 17:28:14,500] Starting program on cuda:0
+[2023-06-05 17:28:14,502] Data created with 1 images
+[2023-06-05 17:28:14,502] Starting Training...
+[2023-06-05 17:28:15,105] Model created
+[2023-06-05 17:28:15,108] Diffusion created with loss: LossType.MSE
+[2023-06-05 17:28:15,108] Schedule sampler created
+[2023-06-05 17:30:19,753] Training complete! Final model saved to ./models/final_model.pt.
+[2023-06-05 17:46:39,369] Starting program on cuda:0
+[2023-06-05 17:46:39,369] Data created with 1 images
+[2023-06-05 17:46:39,369] Starting Training...
+[2023-06-05 17:46:39,950] Model created
+[2023-06-05 17:46:39,957] Diffusion created with loss: LossType.MSE
+[2023-06-05 17:46:39,957] Schedule sampler created
+[2023-06-05 17:46:52,952] Starting program on cuda:0
+[2023-06-05 17:46:53,422] Model created
+[2023-06-05 17:46:53,940] Diffusion created with loss: LossType.MSE
+[2023-06-05 17:46:53,940] 1 models created
+[2023-06-05 17:46:53,940] Sampling images
+[2023-06-05 17:48:06,401] Sampling complete
+[2023-06-05 17:49:22,623] Starting program on cuda:0
+[2023-06-05 17:49:22,638] Data created with 1 images
+[2023-06-05 17:49:22,638] Starting Training...
+[2023-06-05 17:49:23,218] Model created
+[2023-06-05 17:49:23,218] Diffusion created with loss: LossType.MSE
+[2023-06-05 17:49:23,218] Schedule sampler created
+[2023-06-05 18:00:16,593] Training complete! Final model saved to ./models/final_model.pt.
+[2023-06-05 18:03:48,187] Starting program on cuda:0
+[2023-06-05 18:03:48,187] Data created with 1 images
+[2023-06-05 18:03:48,187] Starting Training...
+[2023-06-05 18:03:48,769] Model created
+[2023-06-05 18:03:48,785] Diffusion created with loss: LossType.MSE
+[2023-06-05 18:03:48,785] Schedule sampler created
+[2023-06-05 18:03:50,404] Resumed training from checkpoint: ./models/final_model.pt
+[2023-06-05 18:04:40,646] Starting program on cuda:0
+[2023-06-05 18:04:40,646] Data created with 1 images
+[2023-06-05 18:04:40,646] Starting Training...
+[2023-06-05 18:04:41,289] Model created
+[2023-06-05 18:04:41,289] Diffusion created with loss: LossType.MSE
+[2023-06-05 18:04:41,289] Schedule sampler created
+[2023-06-05 18:04:42,938] Resumed training from checkpoint: ./models/final_model.pt
+[2023-06-05 18:16:27,631] Training complete! Final model saved to ./models/final_model.pt.
+[2023-06-05 18:38:31,492] Starting program on cuda:0
+[2023-06-05 18:38:32,256] Model created
+[2023-06-05 18:38:33,049] Diffusion created with loss: LossType.MSE
+[2023-06-05 18:38:33,050] 1 models created
+[2023-06-05 18:38:33,050] Sampling images
+[2023-06-05 18:39:50,040] Sampling complete
+[2023-06-05 18:44:56,446] Starting program on cuda:0
+[2023-06-05 18:44:57,029] Model created
+[2023-06-05 18:44:57,646] Diffusion created with loss: LossType.MSE
+[2023-06-05 18:44:57,646] 1 models created
+[2023-06-05 18:44:57,647] Sampling images
+[2023-06-05 18:45:08,026] Starting program on cuda:0
+[2023-06-05 18:45:08,028] Data created with 1 images
+[2023-06-05 18:45:08,028] Starting Training...
+[2023-06-05 18:45:08,732] Model created
+[2023-06-05 18:45:08,735] Diffusion created with loss: LossType.MSE
+[2023-06-05 18:45:08,736] Schedule sampler created
+[2023-06-05 18:45:10,644] Resumed training from checkpoint: ./models/final_model.pt

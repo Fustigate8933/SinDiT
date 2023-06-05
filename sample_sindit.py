@@ -8,9 +8,9 @@ from diffusion.respace import create_gaussian_diffusion
 import os
 
 
-def sample_sindit():
+def sample_sindit(model_name=""):
     NUM_SAMPLES = 10000
-    input_size = 32
+    input_size = 128
     FULL_SIZE = (input_size, input_size)
     MIN_SIZE = 25
     MAX_SIZE = 250
@@ -50,9 +50,9 @@ def sample_sindit():
 
     patch_size = 4
     in_channels = 3
-    hidden_size = 1152
-    depth = 28
-    num_heads = 16
+    hidden_size = 384
+    depth = 12
+    num_heads = 6
     mlp_ratio = 4.0
     class_dropout_prob = 0.1
     # num_classes = len(data)
@@ -62,7 +62,7 @@ def sample_sindit():
     diffusions = []
 
     for _ in range(STOP_SCALE + 1)[-1:]:
-        model_path = os.path.join(MODELS_PATH, "Landscapes.pt")
+        model_path = os.path.join(MODELS_PATH, f"{model_name}.pt")
         model = DiT(
             input_size=input_size,
             patch_size=patch_size,
@@ -108,11 +108,10 @@ def sample_sindit():
             device=device,
             progress=True
         )
-
         for i in range(sample.shape[0]):
-            torchvision.utils.save_image(sample[i] * 0.5 + 0.5, f"{RESULTS_PATH}/landscape{i}.png")
+            torchvision.utils.save_image(sample[i] * 0.5 + 0.5, f"{RESULTS_PATH}/1.jpg")
     logging.info("Sampling complete")
 
 
 if __name__ == "__main__":
-    sample_sindit()
+    sample_sindit(model_name="final_model")

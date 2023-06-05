@@ -217,6 +217,7 @@ class DiT(nn.Module):
             x = block(x, c)
         x = self.final_layer(x, c)
         x = self.unpatchify(x)
+
         return x
 
     def forward_with_cfg(self, x, t, y, cfg_scale):
