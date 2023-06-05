@@ -31,7 +31,7 @@ def sample_sindit():
         torch.cuda.set_device(device)
     else:
         device = "cpu"
-    device = "cpu"  # also edit like 268 on gaussian_diffusion.py
+    # device = "cpu"  # also edit like 268 on gaussian_diffusion.py
     logging.info(f"Starting program on {device}")
     seed = 42
     torch.manual_seed(seed)

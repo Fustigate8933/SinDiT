@@ -11,7 +11,7 @@ from diffusion.respace import create_gaussian_diffusion
 import os
 
 
-def train_sindit():
+def train_sindit(data_path="./data"):
     logging.basicConfig(filename="./training_log.txt", level=logging.DEBUG, filemode="a",
                         format="[%(asctime)s] %(message)s")
     logging.getLogger().addHandler(logging.StreamHandler())
@@ -21,7 +21,7 @@ def train_sindit():
         torch.cuda.set_device(device)
     else:
         device = "cpu"
-    device = "cpu"  # edit line 199 in gaussian_diffusion.py
+    # device = "cpu"  # edit line 199 in gaussian_diffusion.py
 
     logging.info(f"Starting program on {device}")
     seed = 42
@@ -35,7 +35,6 @@ def train_sindit():
         transforms.CenterCrop(input_size),
         transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])
     ])
-    data_path = "./data"
     data = torchvision.datasets.ImageFolder(data_path, transform=img_transforms)
     dataloader = iter(torch.utils.data.DataLoader(data, num_workers=0, batch_size=1, shuffle=True))
     class_names = os.listdir(data_path)
