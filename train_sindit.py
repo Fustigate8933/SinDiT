@@ -9,6 +9,7 @@ from tqdm import tqdm
 from diffusion.resample import UniformSampler
 from diffusion.respace import create_gaussian_diffusion
 import os
+import matplotlib.pyplot as plt
 
 def random_crop_and_pad(image, crop_ratio=0.77):
     batch_size, channels, height, width = image.shape
@@ -23,7 +24,7 @@ def random_crop_and_pad(image, crop_ratio=0.77):
     return padded_image
 
 
-def train_sindit(data_path="./data", checkpoint_interval=1000, resume_checkpoint=None):
+def train_sindit(data_path="./data", checkpoint_interval=1000, resume_checkpoint=None, epochs=100):
     logging.basicConfig(filename="./training_log.txt", level=logging.DEBUG, filemode="a",
                         format="[%(asctime)s] %(message)s")
     logging.getLogger().addHandler(logging.StreamHandler())
@@ -36,15 +37,12 @@ def train_sindit(data_path="./data", checkpoint_interval=1000, resume_checkpoint
     # device = "cpu"  # edit line 199 in gaussian_diffusion.py
 
     logging.info(f"Starting program on {device}")
-    seed = 42
-    torch.manual_seed(seed)
 
-    # input_size = 32
+    input_size = 180
 
     img_transforms = transforms.Compose([
         transforms.ToTensor(),
-        # transforms.Resize(input_size),
-        # transforms.CenterCrop(input_size),
+        transforms.Resize(input_size),
         transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])
     ])
     data = torchvision.datasets.ImageFolder(data_path, transform=img_transforms)
@@ -52,14 +50,11 @@ def train_sindit(data_path="./data", checkpoint_interval=1000, resume_checkpoint
     # class_names = os.listdir(data_path)
     logging.info(f"Data created with {len(data)} images")
 
-    logging.info("Starting Training...")
     batch, cond = next(dataloader)
     cond = torch.tensor([1], device=device)
     batch = batch.to(device)
     cond = cond.to(device)
 
-    input_size = 128
-    batch = batch[:, :, :input_size, :input_size]
     num_heads = 6
     hidden_size = 384
     depth = 12
@@ -92,27 +87,26 @@ def train_sindit(data_path="./data", checkpoint_interval=1000, resume_checkpoint
         opt.load_state_dict(checkpoint["opt"])
         logging.info(f"Resumed training from checkpoint: {resume_checkpoint}")
 
-    epochs = 100
+    logging.info("Starting Training...")
     with tqdm(total=epochs) as tm:
         for iteration in range(epochs):
             t, weights = schedule_sampler.sample(batch.shape[0], device)
             running_loss = 0
-            for _ in range(epochs):
-                patch = random_crop_and_pad(batch, 0.77)
-                model_kwargs = dict(y=cond)
-                compute_losses = functools.partial(
-                    diffusion.training_losses,
-                    model,
-                    patch,
-                    t,
-                    model_kwargs=model_kwargs
-                )
-                loss_dict = compute_losses()
-                loss = loss_dict["loss"]
-                opt.zero_grad()
-                loss.backward()
-                opt.step()
-                running_loss += loss.item()
+            patch = random_crop_and_pad(batch, 0.77)
+            model_kwargs = dict(y=cond)
+            compute_losses = functools.partial(
+                diffusion.training_losses,
+                model,
+                patch,
+                t,
+                model_kwargs=model_kwargs
+            )
+            loss_dict = compute_losses()
+            loss = loss_dict["loss"]
+            opt.zero_grad()
+            loss.backward()
+            opt.step()
+            running_loss += loss.item()
 
             if iteration % checkpoint_interval == 0 and iteration != 0:
                 save_params = {
@@ -126,6 +120,7 @@ def train_sindit(data_path="./data", checkpoint_interval=1000, resume_checkpoint
                 logging.info(f"\nCheckpoint saved at iteration {iteration}")
 
             tm.set_postfix(loss=running_loss / (iteration + 1))
+            tm.set_postfix(epoch=(iteration + 1))
 
         save_params = {
             "model": model.state_dict(),
@@ -133,7 +128,7 @@ def train_sindit(data_path="./data", checkpoint_interval=1000, resume_checkpoint
         }
         if not os.path.exists("./models"):
             os.makedirs("./models")
-        save_path = f"./models/final_model.pt"
+        save_path = f"./models/balloon.pt"
         torch.save(save_params, save_path)
         logging.info(f"Training complete! Final model saved to {save_path}.")
 
@@ -142,5 +137,4 @@ if __name__ == "__main__":
     # To resume training from a checkpoint, provide the path to the checkpoint file as the `resume_checkpoint` argument.
     # If starting training from scratch, set `resume_checkpoint` to None.
     resume_checkpoint = "./models/final_model.pt"
-    # resume_checkpoint = None
-    train_sindit(data_path="./data", resume_checkpoint=resume_checkpoint)
+    train_sindit(data_path="./data", resume_checkpoint="./checkpoints/checkpoint_3000.pt", checkpoint_interval=1000, epochs=1000)

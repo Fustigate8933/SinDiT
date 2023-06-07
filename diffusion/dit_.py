@@ -37,14 +37,14 @@ class TimestepEmbedder(nn.Module):
     """
     Embeds scalar timesteps into vector representations.
     """
+
     def __init__(self, hidden_size, frequency_embedding_size=256):
         super().__init__()
         self.mlp = nn.Sequential(
-            nn.Linear(frequency_embedding_size, hidden_size, bias=True),
-            nn.SiLU(),
-            nn.Linear(hidden_size, hidden_size, bias=True),
+            nn.Linear(1, frequency_embedding_size),
+            nn.ReLU(),
+            nn.Linear(frequency_embedding_size, hidden_size),
         )
-        self.frequency_embedding_size = frequency_embedding_size
 
     @staticmethod
     def timestep_embedding(t, dim, max_period=10000):
@@ -68,9 +68,10 @@ class TimestepEmbedder(nn.Module):
         return embedding
 
     def forward(self, t):
-        t_freq = self.timestep_embedding(t, self.frequency_embedding_size)
-        t_emb = self.mlp(t_freq)
-        return t_emb
+        t_scaled = t.unsqueeze(-1) * (2 * math.pi)
+        embeddings = self.mlp(t_scaled)
+        return embeddings
+
 
 class LabelEmbedder(nn.Module):
     """
@@ -123,37 +124,71 @@ class FinalLayer(nn.Module):
         return x
 
 
+# class DiT(nn.Module):
+#     def __init__(self,
+#         input_size=32,
+#         patch_size=4,
+#         in_channels=3,
+#         hidden_size=768,
+#         depth=12,  # number of DiT blocks
+#         num_heads=12,
+#         mlp_ratio=4.0,
+#         class_dropout_prob=0.1,
+#         num_classes=10,
+#         learn_sigma=True ,  # learn sigma in diffusion
+#         device=None
+#     ):
+#         super().__init__()
+#         self.learn_sigma = learn_sigma
+#         self.in_channels = in_channels
+#         self.out_channels = in_channels
+#         self.path_size = patch_size
+#         self.num_heads = num_heads
+#         self.x_embedder = PatchEmbed(input_size, patch_size, in_channels, hidden_size, bias=True)
+#         self.t_embedder = TimestepEmbedder(hidden_size)
+#         self.y_embedder = LabelEmbedder(num_classes, hidden_size, class_dropout_prob, device=device)
+#         num_patches = self.x_embedder.num_patches
+#         self.pos_embed = nn.Parameter(torch.zeros(1, num_patches, hidden_size), requires_grad=False)  # will use sin-cos embedding
+#         self.blocks = nn.ModuleList([
+#              DiTBlock(hidden_size, num_heads, mlp_ratio=mlp_ratio) for _ in range(depth)
+#         ])
+#         self.final_layer = FinalLayer(hidden_size, patch_size, self.out_channels)
+#         self.initialize_weights()
+#         self.device = device
 class DiT(nn.Module):
-    def __init__(self,
-        input_size=32,
-        patch_size=4,
-        in_channels=3,
-        hidden_size=768,
-        depth=12,  # number of DiT blocks
-        num_heads=12,
-        mlp_ratio=4.0,
-        class_dropout_prob=0.1,
-        num_classes=10,
-        learn_sigma=True ,  # learn sigma in diffusion
-        device=None
+    def __init__(
+            self,
+            image_size,
+            patch_size,
+            hidden_size,
+            num_classes,
+            num_heads,
+            depth,
+            mlp_ratio=4.0,
+            frequency_embedding_size=256,
+            **kwargs
     ):
         super().__init__()
-        self.learn_sigma = learn_sigma
-        self.in_channels = in_channels
-        self.out_channels = in_channels
-        self.path_size = patch_size
-        self.num_heads = num_heads
-        self.x_embedder = PatchEmbed(input_size, patch_size, in_channels, hidden_size, bias=True)
-        self.t_embedder = TimestepEmbedder(hidden_size)
-        self.y_embedder = LabelEmbedder(num_classes, hidden_size, class_dropout_prob, device=device)
-        num_patches = self.x_embedder.num_patches
-        self.pos_embed = nn.Parameter(torch.zeros(1, num_patches, hidden_size), requires_grad=False)  # will use sin-cos embedding
+        assert (
+                image_size % patch_size == 0
+        ), "Image dimensions must be divisible by the patch size."
+        num_patches = (image_size // patch_size) ** 2
+        self.patch_size = patch_size
+        self.hidden_size = hidden_size
+        self.embeddings = nn.Sequential(
+            PatchEmbed(
+                patch_size=patch_size,
+                in_chans=3,
+                embed_dim=hidden_size,
+            ),
+            TimestepEmbedder(hidden_size, frequency_embedding_size=frequency_embedding_size),
+        )
         self.blocks = nn.ModuleList([
-             DiTBlock(hidden_size, num_heads, mlp_ratio=mlp_ratio) for _ in range(depth)
+            DiTBlock(hidden_size, num_heads, mlp_ratio=mlp_ratio)
+            for _ in range(depth)
         ])
-        self.final_layer = FinalLayer(hidden_size, patch_size, self.out_channels)
-        self.initialize_weights()
-        self.device = device
+        self.norm = nn.LayerNorm(hidden_size, elementwise_affine=False, eps=1e-6)
+        self.head = nn.Linear(hidden_size, num_classes)
 
     def initialize_weights(self):
         def _basic_init(module):  # initialize model weights
@@ -205,17 +240,26 @@ class DiT(nn.Module):
         imgs = x.permute(0, 5, 1, 3, 2, 4).reshape(x.shape[0], c, h * p, w * p)
         return imgs
 
-    def forward(self, x, t):
-        x = x.to(self.device)
-        x = self.x_embedder(x) + self.pos_embed
-        t = self.t_embedder(t)
-        # y = self.y_embedder(y, self.training)
-        c = t
-        for block in self.blocks:
-            x = block(x, c)
-        x = self.final_layer(x, c)
-        x = self.unpatchify(x)
+    # def forward(self, x, t):
+    #     x = x.to(self.device)
+    #     x = self.x_embedder(x) + self.pos_embed
+    #     t = self.t_embedder(t)
+    #     # y = self.y_embedder(y, self.training)
+    #     c = t
+    #     for block in self.blocks:
+    #         x = block(x, c)
+    #     x = self.final_layer(x, c)
+    #     x = self.unpatchify(x)
+    #
+    #     return x
 
+    def forward(self, x, t):
+        x = self.embeddings(x)
+        for block in self.blocks:
+            x = block(x, t)
+        x = self.norm(x)
+        x = x.mean(dim=1)  # Global average pooling
+        x = self.head(x)
         return x
 
     def forward_with_cfg(self, x, t, y, cfg_scale):

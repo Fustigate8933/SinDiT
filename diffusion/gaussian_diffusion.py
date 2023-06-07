@@ -270,7 +270,7 @@ class GaussianDiffusion:
         # device = "cpu"
 
         cond = torch.tensor([1], device=device)
-        model_output = model(x, self._scale_timesteps(t), y=cond)
+        model_output = model(x, self._scale_timesteps(t))
 
         if self.model_var_type in [ModelVarType.LEARNED, ModelVarType.LEARNED_RANGE]:
             assert model_output.shape == (B, C * 2, *x.shape[2:])
@@ -572,7 +572,6 @@ class GaussianDiffusion:
             # Lazy import so that we don't depend on tqdm.
             from tqdm.auto import tqdm
             indices = tqdm(indices)
-
         for i in indices:
             t = th.tensor([i] * shape[0], device=device)
             with th.no_grad():
