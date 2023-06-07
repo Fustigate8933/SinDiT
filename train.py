@@ -7,6 +7,7 @@ import torchvision
 from PIL import Image
 from diffusion.resample import UniformSampler
 import logging
+import os
 
 
 def save_images(images, path, **kwargs):
@@ -16,7 +17,7 @@ def save_images(images, path, **kwargs):
     im.save(path)
 
 
-def train(resume_checkpoint=False, checkpoint_dir=""):
+def train(resume_checkpoint=False, checkpoint_dir="", output_interval=500, epochs=2000000, model_save_dir="", colab=False):
     logging.basicConfig(filename="./training_log.txt", level=logging.DEBUG, filemode="a",
                         format="[%(asctime)s] %(message)s")
     logging.getLogger().addHandler(logging.StreamHandler())
@@ -56,8 +57,6 @@ def train(resume_checkpoint=False, checkpoint_dir=""):
     image, _ = next(dataloader)
     image = image.to(device)
 
-    epochs = 2000000 - 67000
-    output_interval = 500
     optimizer = torch.optim.AdamW(model.parameters(), lr=1e-4, weight_decay=0.9999)
     mse = torch.nn.MSELoss()
 
@@ -96,8 +95,8 @@ def train(resume_checkpoint=False, checkpoint_dir=""):
             tdm.set_postfix(MSE=loss.item(), epoch=epoch)
 
             if epoch % output_interval == 0:
-                checkpoint_path = f"./models/model-epoch-{epoch}.pt"
-                logging.info(f"Saving checkpoint at {checkpoint_path}")
+                checkpoint_path = os.path.join(model_save_dir, f"model-epoch-{epoch}.pt") if not colab else os.path.join(model_save_dir, f"model.pt")
+                logging.info(f"Saving checkpoint model at {checkpoint_path}")
                 torch.save(model.state_dict(), checkpoint_path)
 
 
