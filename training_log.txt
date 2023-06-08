@@ -8649,3 +8649,15 @@ Checkpoint saved at iteration 3000
 [2023-06-08 15:40:40,418] STREAM b'IHDR' 16 13
 [2023-06-08 15:40:40,418] STREAM b'IDAT' 41 2853
 [2023-06-08 15:40:40,428] Starting training
+[2023-06-08 16:57:14,904] Starting program on cuda:0
+[2023-06-08 16:57:17,870] Loading model and optimizer state from ./models/model-epoch-67000.pt
+[2023-06-08 17:02:29,173] Starting program on cuda:0
+[2023-06-08 17:02:41,477] Starting program on cuda:0
+[2023-06-08 17:02:44,242] Starting training
+[2023-06-08 17:02:58,194] Starting program on cuda:0
+[2023-06-08 17:03:01,092] Starting training
+[2023-06-08 17:03:27,208] Starting program on cuda:0
+[2023-06-08 17:03:42,846] Starting program on cuda:0
+[2023-06-08 17:03:45,773] Starting training
+[2023-06-08 17:03:58,030] Starting program on cuda:0
+[2023-06-08 17:04:00,844] Starting training

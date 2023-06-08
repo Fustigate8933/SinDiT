@@ -8,6 +8,7 @@ from PIL import Image
 from diffusion.resample import UniformSampler
 import logging
 import os
+import cv2
 
 
 def save_images(images, path, **kwargs):
@@ -17,7 +18,7 @@ def save_images(images, path, **kwargs):
     im.save(path)
 
 
-def train(resume_checkpoint=False, checkpoint_dir="", output_interval=2000, epochs=2000000, model_save_dir="", colab=False):
+def train(resume_checkpoint=False, checkpoint_dir="", output_interval=2000, epochs=2000000, model_save_dir="", colab=False, image_path=""):
     logging.basicConfig(filename="./training_log.txt", level=logging.DEBUG, filemode="a", format="[%(asctime)s] %(message)s")
     logging.getLogger().addHandler(logging.StreamHandler())
 
@@ -56,15 +57,14 @@ def train(resume_checkpoint=False, checkpoint_dir="", output_interval=2000, epoc
         optimizer.load_state_dict(torch.load(checkpoint_dir.replace(".pt", "_optimizer.pt"), map_location=device))
         optimizer.zero_grad()
 
-    img_transforms = transforms.Compose([
+    image = cv2.imread(image_path)
+    image = cv2.resize(image, (image_size, image_size), interpolation=cv2.INTER_AREA)
+    image_transforms = transforms.Compose([
         transforms.ToTensor(),
         transforms.Resize(image_size),
         transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])
     ])
-    data = torchvision.datasets.ImageFolder("./data", transform=img_transforms)
-    dataloader = iter(torch.utils.data.DataLoader(data, num_workers=0, batch_size=1, shuffle=True))
-    image, _ = next(dataloader)
-    image = image.to(device)
+    image = image_transforms(image)[None, :, :, :].to(device)
 
     diffusion = create_gaussian_diffusion(
         steps=1000,
@@ -104,4 +104,12 @@ def train(resume_checkpoint=False, checkpoint_dir="", output_interval=2000, epoc
 
 
 if __name__ == "__main__":
-    train(model_save_dir="./models", resume_checkpoint=True, checkpoint_dir="./models/model-epoch-67000.pt", epochs=2000000)
+    train(
+        resume_checkpoint=False,
+        checkpoint_dir="",
+        output_interval=2000,
+        epochs=2000000,
+        model_save_dir="./models/wave.pt",
+        colab=False,
+        image_path="./data/wave/wave.jpg"
+    )
