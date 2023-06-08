@@ -8603,3 +8603,49 @@ Checkpoint saved at iteration 3000
 [2023-06-07 23:25:55,980] STREAM b'IDAT' 41 2853
 [2023-06-07 23:25:55,990] Loading checkpoint from ./models/model-epoch-67000.pt
 [2023-06-07 23:25:57,567] Starting training
+[2023-06-08 07:06:41,002] Starting program on cuda:0
+[2023-06-08 07:07:11,812] Starting program on cuda:0
+[2023-06-08 07:07:13,131] STREAM b'IHDR' 16 13
+[2023-06-08 07:07:13,131] STREAM b'IDAT' 41 2853
+[2023-06-08 07:07:13,131] Starting training
+[2023-06-08 13:07:08,584] Starting program on cuda:0
+[2023-06-08 13:07:13,978] Starting sampling
+[2023-06-08 14:49:09,142] Starting program on cuda:0
+[2023-06-08 14:49:11,630] STREAM b'IHDR' 16 13
+[2023-06-08 14:49:11,630] STREAM b'IDAT' 41 2853
+[2023-06-08 14:49:11,645] Loading checkpoint from ./models/model-epoch-67000.pt
+[2023-06-08 14:49:46,658] Starting program on cuda:0
+[2023-06-08 14:49:49,116] STREAM b'IHDR' 16 13
+[2023-06-08 14:49:49,116] STREAM b'IDAT' 41 2853
+[2023-06-08 14:49:49,129] Loading checkpoint from ./models/model-epoch-67000.pt
+[2023-06-08 14:49:50,894] Starting training
+[2023-06-08 14:50:22,761] Starting program on cuda:0
+[2023-06-08 14:50:25,084] STREAM b'IHDR' 16 13
+[2023-06-08 14:50:25,085] STREAM b'IDAT' 41 2853
+[2023-06-08 14:50:25,095] Loading checkpoint from ./models/model-epoch-67000.pt
+[2023-06-08 14:50:26,846] Starting training
+[2023-06-08 14:51:39,276] Starting program on cuda:0
+[2023-06-08 14:51:41,763] STREAM b'IHDR' 16 13
+[2023-06-08 14:51:41,764] STREAM b'IDAT' 41 2853
+[2023-06-08 14:51:41,779] Loading checkpoint from ./models/model-epoch-67000.pt
+[2023-06-08 14:51:43,790] Starting training
+[2023-06-08 14:52:20,093] Starting program on cuda:0
+[2023-06-08 14:52:23,262] STREAM b'IHDR' 16 13
+[2023-06-08 14:52:23,263] STREAM b'IDAT' 41 2853
+[2023-06-08 14:52:23,272] Loading checkpoint from ./models/model-epoch-67000.pt
+[2023-06-08 14:52:25,177] Starting training
+[2023-06-08 14:53:44,078] Starting program on cuda:0
+[2023-06-08 14:53:45,987] STREAM b'IHDR' 16 13
+[2023-06-08 14:53:45,987] STREAM b'IDAT' 41 2853
+[2023-06-08 14:53:45,989] Loading checkpoint from ./models/model-epoch-67000.pt
+[2023-06-08 14:53:47,712] Starting training
+[2023-06-08 15:29:06,988] Starting program on cuda:0
+[2023-06-08 15:29:09,138] STREAM b'IHDR' 16 13
+[2023-06-08 15:29:09,138] STREAM b'IDAT' 41 2853
+[2023-06-08 15:29:09,149] Loading checkpoint from ./models/model-epoch-67000.pt
+[2023-06-08 15:29:10,788] Starting training
+[2023-06-08 15:40:36,318] Starting program on cuda:0
+[2023-06-08 15:40:38,733] Loading model and optimizer state from ./models/model-epoch-67000.pt
+[2023-06-08 15:40:40,418] STREAM b'IHDR' 16 13
+[2023-06-08 15:40:40,418] STREAM b'IDAT' 41 2853
+[2023-06-08 15:40:40,428] Starting training

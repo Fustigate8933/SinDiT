@@ -4,7 +4,7 @@ import logging
 from diffusion.respace import create_gaussian_diffusion
 import torchvision
 
-def sample(model_path):
+def sample(model_path, num_samples=1):
     logging.basicConfig(filename="./training_log.txt", level=logging.DEBUG, filemode="a",
                         format="[%(asctime)s] %(message)s")
     logging.getLogger().addHandler(logging.StreamHandler())
@@ -49,16 +49,16 @@ def sample(model_path):
     )
 
     logging.info("Starting sampling")
-    _sample = diffusion.p_sample_loop(
-        model,
-        (1, 3, image_size, image_size),
-        model_kwargs={},
-        device=device,
-        progress=True
-    )
-
-    torchvision.utils.save_image(_sample[0], f"./results/image-epoch-67000.jpg")
+    for i in range(1, num_samples + 1):
+        _sample = diffusion.p_sample_loop(
+            model,
+            (1, 3, image_size, image_size),
+            model_kwargs={},
+            device=device,
+            progress=True
+        )
+        torchvision.utils.save_image(_sample[0], f"./results/image-epoch-67000-{i}.jpg")
 
 
 if __name__ == "__main__":
-    sample(model_path="./models/model-epoch-67000.pt")
+    sample(model_path="./models/model-epoch-67000.pt", num_samples=50)

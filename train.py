@@ -17,14 +17,14 @@ def save_images(images, path, **kwargs):
     im.save(path)
 
 
-def train(resume_checkpoint=False, checkpoint_dir="", output_interval=500, epochs=2000000, model_save_dir="", colab=False):
-    logging.basicConfig(filename="./training_log.txt", level=logging.DEBUG, filemode="a",
-                        format="[%(asctime)s] %(message)s")
+def train(resume_checkpoint=False, checkpoint_dir="", output_interval=2000, epochs=2000000, model_save_dir="", colab=False):
+    logging.basicConfig(filename="./training_log.txt", level=logging.DEBUG, filemode="a", format="[%(asctime)s] %(message)s")
     logging.getLogger().addHandler(logging.StreamHandler())
 
     if torch.cuda.is_available():
         device = "cuda:0"
         torch.cuda.set_device(device)
+        torch.cuda.empty_cache()
     else:
         device = "cpu"
     logging.info(f"Starting program on {device}")
@@ -47,6 +47,15 @@ def train(resume_checkpoint=False, checkpoint_dir="", output_interval=500, epoch
         learn_sigma=False
     ).to(device)
 
+    optimizer = torch.optim.AdamW(model.parameters(), lr=1e-4, weight_decay=0.9999)
+    mse = torch.nn.MSELoss()
+
+    if resume_checkpoint is not False:
+        logging.info(f"Loading model and optimizer state from {checkpoint_dir}")
+        model.load_state_dict(torch.load(checkpoint_dir, map_location=device))
+        optimizer.load_state_dict(torch.load(checkpoint_dir.replace(".pt", "_optimizer.pt"), map_location=device))
+        optimizer.zero_grad()
+
     img_transforms = transforms.Compose([
         transforms.ToTensor(),
         transforms.Resize(image_size),
@@ -56,9 +65,6 @@ def train(resume_checkpoint=False, checkpoint_dir="", output_interval=500, epoch
     dataloader = iter(torch.utils.data.DataLoader(data, num_workers=0, batch_size=1, shuffle=True))
     image, _ = next(dataloader)
     image = image.to(device)
-
-    optimizer = torch.optim.AdamW(model.parameters(), lr=1e-4, weight_decay=0.9999)
-    mse = torch.nn.MSELoss()
 
     diffusion = create_gaussian_diffusion(
         steps=1000,
@@ -71,10 +77,6 @@ def train(resume_checkpoint=False, checkpoint_dir="", output_interval=500, epoch
         rescale_learned_sigmas=False,
         timestep_respacing="",
     )
-
-    if resume_checkpoint is not False:
-        logging.info(f"Loading checkpoint from {checkpoint_dir}")
-        model.load_state_dict(torch.load(checkpoint_dir))
 
     schedule_sampler = UniformSampler(diffusion)
 
@@ -98,7 +100,8 @@ def train(resume_checkpoint=False, checkpoint_dir="", output_interval=500, epoch
                 checkpoint_path = os.path.join(model_save_dir, f"model-epoch-{epoch}.pt") if not colab else os.path.join(model_save_dir, f"model.pt")
                 logging.info(f"Saving checkpoint model at {checkpoint_path}")
                 torch.save(model.state_dict(), checkpoint_path)
+                torch.save(optimizer.state_dict(), checkpoint_path.replace(".pt", "_optimizer.pt"))
 
 
 if __name__ == "__main__":
-    train(True, "./models/model-epoch-67000.pt")
+    train(model_save_dir="./models", resume_checkpoint=True, checkpoint_dir="./models/model-epoch-67000.pt", epochs=2000000)
