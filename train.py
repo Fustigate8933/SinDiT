@@ -53,8 +53,8 @@ def train(resume_checkpoint=False, checkpoint_dir="", output_interval=2000, epoc
     if resume_checkpoint is not False:
         logging.info(f"Loading model and optimizer state from {checkpoint_dir}")
         model.load_state_dict(torch.load(checkpoint_dir, map_location=device))
-        # optimizer.load_state_dict(torch.load(checkpoint_dir.replace(".pt", "_optimizer.pt"), map_location=device))
-        # optimizer.zero_grad()
+        optimizer.load_state_dict(torch.load(checkpoint_dir.replace(".pt", "_optimizer.pt"), map_location=device))
+        optimizer.zero_grad()
 
     img_transforms = transforms.Compose([
         transforms.ToTensor(),
