@@ -34,7 +34,7 @@ def train(resume_checkpoint=False, checkpoint_dir="", output_interval=2000, epoc
     num_heads = 12
     hidden_size = 768
     patch_size = 4
-    depth = 12
+    depth = 12  # default 12
     model = DiT(
         input_size=image_size,
         patch_size=patch_size,
@@ -97,7 +97,7 @@ def train(resume_checkpoint=False, checkpoint_dir="", output_interval=2000, epoc
             tdm.set_postfix(MSE=loss.item(), epoch=epoch)
 
             if epoch % output_interval == 0:
-                checkpoint_path = os.path.join(model_save_dir, f"model-epoch-{epoch}.pt") if not colab else os.path.join(model_save_dir, f"model.pt")
+                checkpoint_path = os.path.join(model_save_dir, f"wave-model-depth6-epoch-{epoch}.pt") if not colab else os.path.join(model_save_dir, f"model.pt")
                 logging.info(f"Saving checkpoint model at {checkpoint_path}")
                 torch.save(model.state_dict(), checkpoint_path)
                 torch.save(optimizer.state_dict(), checkpoint_path.replace(".pt", "_optimizer.pt"))
@@ -108,8 +108,8 @@ if __name__ == "__main__":
         resume_checkpoint=False,
         checkpoint_dir="",
         output_interval=2000,
-        epochs=2000000,
-        model_save_dir="./models/wave.pt",
+        epochs=100000,
+        model_save_dir="./models",
         colab=False,
         image_path="./data/wave/wave.jpg"
     )

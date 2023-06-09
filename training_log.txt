@@ -8661,3 +8661,62 @@ Checkpoint saved at iteration 3000
 [2023-06-08 17:03:45,773] Starting training
 [2023-06-08 17:03:58,030] Starting program on cuda:0
 [2023-06-08 17:04:00,844] Starting training
+[2023-06-08 22:45:57,719] Starting program on cuda:0
+[2023-06-08 22:46:22,033] Starting program on cuda:0
+[2023-06-08 22:46:44,746] Starting program on cuda:0
+[2023-06-08 22:46:54,026] Starting sampling
+[2023-06-09 07:03:11,592] Starting program on cuda:0
+[2023-06-09 07:03:12,889] Starting training
+[2023-06-09 07:15:04,295] Saving checkpoint model at ./models\wave-model-depth6-epoch-2000.pt
+[2023-06-09 07:27:42,875] Saving checkpoint model at ./models\wave-model-depth6-epoch-4000.pt
+[2023-06-09 07:40:31,649] Saving checkpoint model at ./models\wave-model-depth6-epoch-6000.pt
+[2023-06-09 07:53:24,707] Saving checkpoint model at ./models\wave-model-depth6-epoch-8000.pt
+[2023-06-09 08:06:21,044] Saving checkpoint model at ./models\wave-model-depth6-epoch-10000.pt
+[2023-06-09 08:19:19,878] Saving checkpoint model at ./models\wave-model-depth6-epoch-12000.pt
+[2023-06-09 08:32:24,225] Saving checkpoint model at ./models\wave-model-depth6-epoch-14000.pt
+[2023-06-09 08:45:30,715] Saving checkpoint model at ./models\wave-model-depth6-epoch-16000.pt
+[2023-06-09 08:58:42,692] Saving checkpoint model at ./models\wave-model-depth6-epoch-18000.pt
+[2023-06-09 09:12:01,605] Saving checkpoint model at ./models\wave-model-depth6-epoch-20000.pt
+[2023-06-09 09:25:22,066] Saving checkpoint model at ./models\wave-model-depth6-epoch-22000.pt
+[2023-06-09 09:38:41,678] Saving checkpoint model at ./models\wave-model-depth6-epoch-24000.pt
+[2023-06-09 09:52:03,155] Saving checkpoint model at ./models\wave-model-depth6-epoch-26000.pt
+[2023-06-09 10:05:25,057] Saving checkpoint model at ./models\wave-model-depth6-epoch-28000.pt
+[2023-06-09 10:18:45,461] Saving checkpoint model at ./models\wave-model-depth6-epoch-30000.pt
+[2023-06-09 10:32:08,913] Saving checkpoint model at ./models\wave-model-depth6-epoch-32000.pt
+[2023-06-09 10:45:35,073] Saving checkpoint model at ./models\wave-model-depth6-epoch-34000.pt
+[2023-06-09 10:59:04,214] Saving checkpoint model at ./models\wave-model-depth6-epoch-36000.pt
+[2023-06-09 11:12:34,706] Saving checkpoint model at ./models\wave-model-depth6-epoch-38000.pt
+[2023-06-09 11:26:14,843] Saving checkpoint model at ./models\wave-model-depth6-epoch-40000.pt
+[2023-06-09 11:39:46,444] Saving checkpoint model at ./models\wave-model-depth6-epoch-42000.pt
+[2023-06-09 11:53:23,072] Saving checkpoint model at ./models\wave-model-depth6-epoch-44000.pt
+[2023-06-09 12:06:43,043] Saving checkpoint model at ./models\wave-model-depth6-epoch-46000.pt
+[2023-06-09 12:20:08,074] Saving checkpoint model at ./models\wave-model-depth6-epoch-48000.pt
+[2023-06-09 12:33:31,324] Saving checkpoint model at ./models\wave-model-depth6-epoch-50000.pt
+[2023-06-09 12:46:57,210] Saving checkpoint model at ./models\wave-model-depth6-epoch-52000.pt
+[2023-06-09 13:00:22,522] Saving checkpoint model at ./models\wave-model-depth6-epoch-54000.pt
+[2023-06-09 13:13:47,705] Saving checkpoint model at ./models\wave-model-depth6-epoch-56000.pt
+[2023-06-09 13:27:12,032] Saving checkpoint model at ./models\wave-model-depth6-epoch-58000.pt
+[2023-06-09 13:40:38,235] Saving checkpoint model at ./models\wave-model-depth6-epoch-60000.pt
+[2023-06-09 13:54:07,762] Saving checkpoint model at ./models\wave-model-depth6-epoch-62000.pt
+[2023-06-09 14:07:40,259] Saving checkpoint model at ./models\wave-model-depth6-epoch-64000.pt
+[2023-06-09 14:21:14,346] Saving checkpoint model at ./models\wave-model-depth6-epoch-66000.pt
+[2023-06-09 14:34:50,762] Saving checkpoint model at ./models\wave-model-depth6-epoch-68000.pt
+[2023-06-09 14:48:18,148] Saving checkpoint model at ./models\wave-model-depth6-epoch-70000.pt
+[2023-06-09 15:01:51,600] Saving checkpoint model at ./models\wave-model-depth6-epoch-72000.pt
+[2023-06-09 15:15:26,882] Saving checkpoint model at ./models\wave-model-depth6-epoch-74000.pt
+[2023-06-09 15:29:04,897] Saving checkpoint model at ./models\wave-model-depth6-epoch-76000.pt
+[2023-06-09 15:42:44,611] Saving checkpoint model at ./models\wave-model-depth6-epoch-78000.pt
+[2023-06-09 15:56:24,036] Saving checkpoint model at ./models\wave-model-depth6-epoch-80000.pt
+[2023-06-09 16:10:04,624] Saving checkpoint model at ./models\wave-model-depth6-epoch-82000.pt
+[2023-06-09 16:23:39,019] Saving checkpoint model at ./models\wave-model-depth6-epoch-84000.pt
+[2023-06-09 16:37:18,729] Saving checkpoint model at ./models\wave-model-depth6-epoch-86000.pt
+[2023-06-09 16:50:58,944] Saving checkpoint model at ./models\wave-model-depth6-epoch-88000.pt
+[2023-06-09 17:04:38,829] Saving checkpoint model at ./models\wave-model-depth6-epoch-90000.pt
+[2023-06-09 17:18:13,892] Saving checkpoint model at ./models\wave-model-depth6-epoch-92000.pt
+[2023-06-09 17:31:46,993] Saving checkpoint model at ./models\wave-model-depth6-epoch-94000.pt
+[2023-06-09 17:45:21,302] Saving checkpoint model at ./models\wave-model-depth6-epoch-96000.pt
+[2023-06-09 17:58:56,820] Saving checkpoint model at ./models\wave-model-depth6-epoch-98000.pt
+[2023-06-09 18:12:31,466] Saving checkpoint model at ./models\wave-model-depth6-epoch-100000.pt
+[2023-06-09 22:24:18,639] Starting program on cuda:0
+[2023-06-09 22:36:43,405] Starting program on cuda:0
+[2023-06-09 22:36:46,575] Starting sampling

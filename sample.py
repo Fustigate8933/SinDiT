@@ -20,7 +20,7 @@ def sample(model_path, num_samples=1):
     num_heads = 12
     hidden_size = 768
     patch_size = 4
-    depth = 12
+    depth = 6  # default 12
     model = DiT(
         input_size=image_size,
         patch_size=patch_size,
@@ -57,8 +57,8 @@ def sample(model_path, num_samples=1):
             device=device,
             progress=True
         )
-        torchvision.utils.save_image(_sample[0], f"./results/image-epoch-67000-{i}.jpg")
+        torchvision.utils.save_image(_sample[0], f"./results/wave-model-depth6-epoch-100000-{i}.jpg")
 
 
 if __name__ == "__main__":
-    sample(model_path="./models/model-epoch-67000.pt", num_samples=50)
+    sample(model_path="./models/wave-model-depth6-epoch-100000.pt", num_samples=1)
