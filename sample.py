@@ -3,6 +3,7 @@ from diffusion.dit import DiT
 import logging
 from diffusion.respace import create_gaussian_diffusion
 import torchvision
+from torchvision.transforms import Normalize
 
 def sample(model_path, num_samples=1):
     logging.basicConfig(filename="./training_log.txt", level=logging.DEBUG, filemode="a",
@@ -17,10 +18,10 @@ def sample(model_path, num_samples=1):
     logging.info(f"Starting program on {device}")
 
     image_size = 128
-    num_heads = 12
-    hidden_size = 768
+    num_heads = 6  # default 12
+    hidden_size = 384  # default 768
     patch_size = 4
-    depth = 6  # default 12
+    depth = 24  # default 12
     model = DiT(
         input_size=image_size,
         patch_size=patch_size,
@@ -48,6 +49,8 @@ def sample(model_path, num_samples=1):
         timestep_respacing="",
     )
 
+    image_untransform = Normalize(mean=[-1, -1, -1], std=[2, 2, 2])
+
     logging.info("Starting sampling")
     for i in range(1, num_samples + 1):
         _sample = diffusion.p_sample_loop(
@@ -57,8 +60,9 @@ def sample(model_path, num_samples=1):
             device=device,
             progress=True
         )
-        torchvision.utils.save_image(_sample[0], f"./results/wave-model-depth6-epoch-100000-{i}.jpg")
+        unnormalized = image_untransform(_sample[0])
+        torchvision.utils.save_image(unnormalized, f"./results/wave-model-depth24-numhead6-hidden384-epoch-80000-{i}.jpg")
 
 
 if __name__ == "__main__":
-    sample(model_path="./models/wave-model-depth6-epoch-100000.pt", num_samples=1)
+    sample(model_path="./models/wave-model-depth24-numhead6-hidden384-epoch-80000.pt", num_samples=1)
