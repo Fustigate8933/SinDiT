@@ -91,10 +91,10 @@ def train(resume_checkpoint=False, checkpoint_dir="", output_interval=2000, epoc
     with tqdm(total=epochs) as tdm:
         for epoch in range(1, epochs + 1):
             transform = A.Compose([
-                A.VerticalFlip(p=0.2),
-                A.GaussianBlur(p=0.5, sigma_limit=(0, 3)),
-                A.RandomBrightnessContrast(p=0.4),
-                A.ShiftScaleRotate(p=1, shift_limit=0.1, rotate_limit=20, scale_limit=0.3),
+                # A.VerticalFlip(p=0.2),
+                A.GaussianBlur(p=0.1, sigma_limit=(0, 3)),
+                A.RandomBrightnessContrast(p=0.2),
+                A.ShiftScaleRotate(p=1, shift_limit=0.1, rotate_limit=10, scale_limit=0.15),
             ])
             augmented_image = torch.tensor(transform(image=torch.squeeze(image.cpu(), dim=0).numpy())["image"][None, :, :, :]).to(device)
 

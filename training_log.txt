@@ -16470,3 +16470,8 @@ Checkpoint saved at iteration 3000
 [2023-06-12 14:03:13,626] Saving checkpoint model at ./models\wave-model-numhead6-epoch-90000.pt
 [2023-06-12 14:58:47,083] Saving checkpoint model at ./models\wave-model-numhead6-epoch-95000.pt
 [2023-06-12 15:54:11,338] Saving checkpoint model at ./models\wave-model-numhead6-epoch-100000.pt
+[2023-06-12 16:56:20,385] Starting program on cuda:0
+[2023-06-12 17:01:23,822] Starting program on cuda:0
+[2023-06-12 17:01:27,605] Starting sampling
+[2023-06-13 11:44:38,729] Starting program on cuda:0
+[2023-06-13 11:44:47,981] Starting sampling
