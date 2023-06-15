@@ -108,7 +108,7 @@ def train(resume_checkpoint=False, checkpoint_dir="", output_interval=2000, epoc
         for epoch in range(1, epochs + 1):
             transform = A.Compose([
                 A.RandomBrightnessContrast(p=0.2),
-                A.ShiftScaleRotate(p=1, shift_limit_x=(-0.01, 0.01), shift_limit_y=0.0, rotate_limit=7),
+                A.ShiftScaleRotate(p=0.2, shift_limit_x=(-0.01, 0.01), shift_limit_y=0.0, rotate_limit=7),
             ])
             im = transform(image=torch.squeeze(image.cpu(), dim=0).numpy())["image"]
             augmented_image = torch.tensor(im[None, :, :, :]).to(device)
@@ -145,10 +145,3 @@ if __name__ == "__main__":
         colab=False,
         image_path="./data/balloon/balloon.png"
     )
-
-
-"""
-image augmentation
-change patch size
-unnormalize image at sampling
-"""
