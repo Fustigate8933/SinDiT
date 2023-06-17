@@ -51,9 +51,9 @@ def train(resume_checkpoint=False, checkpoint_dir="", output_interval=2000, epoc
 
     args = {
         "image_size": 128,
-        "num_heads": 6,
+        "num_heads": 12,
         "hidden_size": 768,  # default 768
-        "patch_size": 4,
+        "patch_size": 8,
         "depth": 12  # default 12
     }
     model = DiT(
@@ -104,16 +104,24 @@ def train(resume_checkpoint=False, checkpoint_dir="", output_interval=2000, epoc
 
     logging.info(f"Starting training")
 
+    mse = torch.nn.MSELoss()
+
     with tqdm(total=epochs) as tdm:
         for epoch in range(1, epochs + 1):
-            transform = A.Compose([
-                A.RandomBrightnessContrast(p=0.2),
-                A.ShiftScaleRotate(p=0.2, shift_limit_x=(-0.01, 0.01), shift_limit_y=0.0, rotate_limit=7),
-            ])
-            im = transform(image=torch.squeeze(image.cpu(), dim=0).numpy())["image"]
-            augmented_image = torch.tensor(im[None, :, :, :]).to(device)
-            t, _ = schedule_sampler.sample(augmented_image.shape[0], device)
-            loss = diffusion.training_losses(model, augmented_image, t, model_kwargs={})["loss"].mean()
+            # transform = A.Compose([
+            #     A.RandomBrightnessContrast(p=0.2),
+            #     A.ShiftScaleRotate(p=0.2, shift_limit_x=(-0.01, 0.01), shift_limit_y=0.0, rotate_limit=7),
+            # ])
+            # im = transform(image=torch.squeeze(image.cpu(), dim=0).numpy())["image"]
+            # augmented_image = torch.tensor(im[None, :, :, :]).to(device)
+            # t, _ = schedule_sampler.sample(image.shape[0], device)
+            # loss = diffusion.training_losses(model, image, t, model_kwargs={})["loss"].mean()
+
+            t, _ = schedule_sampler.sample(image.shape[0], device)
+            noise = torch.randn_like(image).to(device)
+            x_t = diffusion.q_sample(image, t, noise=noise)  # noised image
+            predicted_noise = x_t - model(x_t, t)
+            loss = mse(noise, predicted_noise)
 
             optimizer.zero_grad()
             loss.backward()
@@ -141,7 +149,7 @@ if __name__ == "__main__":
         checkpoint_dir="",
         output_interval=5000,
         epochs=200000,
-        model_save_dir="./models/balloon",
+        model_save_dir="./models/wave",
         colab=False,
-        image_path="./data/balloon/balloon.png"
+        image_path="./data/wave/wave.jpg"
     )

@@ -59,8 +59,8 @@ def sample(model_path, num_samples=1):
             progress=True
         )
         unnormalized = image_untransform(_sample[0])
-        torchvision.utils.save_image(unnormalized, f"./results/balloon/epoch-{i}.jpg")
+        torchvision.utils.save_image(unnormalized, f"./results/wave/model-100000-{i}.jpg")
 
 
 if __name__ == "__main__":
-    sample(model_path="./models/balloon/epoch-.pt", num_samples=1)
+    sample(model_path="./models/wave/epoch-130000.pt", num_samples=10)
