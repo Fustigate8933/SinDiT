@@ -12,9 +12,9 @@ import cv2
 import albumentations as A
 # from diffusers.models import AutoencoderKL
 from copy import deepcopy
-# from diffusion.showimgs import showimgs, showrgb
-# import matplotlib.pyplot as plt
-# import numpy as np
+from diffusion.showimgs import showimgs, showrgb
+import matplotlib.pyplot as plt
+import numpy as np
 from collections import OrderedDict
 
 
@@ -37,7 +37,7 @@ def save_images(images, path, **kwargs):
     im.save(path)
 
 
-def train(resume_checkpoint=False, checkpoint_dir="", output_interval=2000, epochs=2000000, model_save_dir="", colab=False, image_path=""):
+def train(resume_checkpoint=False, checkpoint_dir="", output_interval=2000, epochs=2000000, model_save_dir="", colab=False, image_path="", start_at=0):
     logging.basicConfig(filename="./training_log.txt", level=logging.DEBUG, filemode="a", format="[%(asctime)s] %(message)s")
     logging.getLogger().addHandler(logging.StreamHandler())
 
@@ -47,6 +47,7 @@ def train(resume_checkpoint=False, checkpoint_dir="", output_interval=2000, epoc
         torch.cuda.empty_cache()
     else:
         device = "cpu"
+    # device = "cpu"
     logging.info(f"Starting program on {device}")
 
     args = {
@@ -82,6 +83,8 @@ def train(resume_checkpoint=False, checkpoint_dir="", output_interval=2000, epoc
 
     image = cv2.imread(image_path)
     image = cv2.resize(image, (args["image_size"], args["image_size"]), interpolation=cv2.INTER_AREA)
+
+    # image = image.astype(np.float32) / 255.0
     image_transforms = transforms.Compose([
         transforms.ToTensor(),
         transforms.Normalize(mean=[0.5, 0.5, 0.5], std=[0.5, 0.5, 0.5])
@@ -107,12 +110,14 @@ def train(resume_checkpoint=False, checkpoint_dir="", output_interval=2000, epoc
     mse = torch.nn.MSELoss()
 
     with tqdm(total=epochs) as tdm:
-        for epoch in range(1, epochs + 1):
+        for epoch in range(start_at + 1, epochs + 1):
             # transform = A.Compose([
-            #     A.RandomBrightnessContrast(p=0.2),
-            #     A.ShiftScaleRotate(p=0.2, shift_limit_x=(-0.01, 0.01), shift_limit_y=0.0, rotate_limit=7),
+            #     A.RandomBrightnessContrast(p=1),
+            #     A.ShiftScaleRotate(p=1, shift_limit_x=(-0.01, 0.01), shift_limit_y=0.0, rotate_limit=7),
             # ])
             # im = transform(image=torch.squeeze(image.cpu(), dim=0).numpy())["image"]
+            # showrgb(np.moveaxis(im, 0, -1))
+            # break
             # augmented_image = torch.tensor(im[None, :, :, :]).to(device)
             # t, _ = schedule_sampler.sample(image.shape[0], device)
             # loss = diffusion.training_losses(model, image, t, model_kwargs={})["loss"].mean()
@@ -146,10 +151,11 @@ def train(resume_checkpoint=False, checkpoint_dir="", output_interval=2000, epoc
 if __name__ == "__main__":
     train(
         resume_checkpoint=False,
-        checkpoint_dir="",
+        checkpoint_dir="./models/moutains/epoch-55000.pt",
         output_interval=5000,
+        start_at=1,
         epochs=200000,
-        model_save_dir="./models/wave",
+        model_save_dir="./models/geese",
         colab=False,
-        image_path="./data/wave/wave.jpg"
+        image_path="./data/geese/geese.png",
     )

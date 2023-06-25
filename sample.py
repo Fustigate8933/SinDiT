@@ -3,9 +3,10 @@ from diffusion.dit import DiT
 import logging
 from diffusion.respace import create_gaussian_diffusion
 import torchvision
+import argparse
 from torchvision.transforms import Normalize
 
-def sample(model_path, num_samples=1):
+def sample(im_name, model_epoch, num_samples=1):
     logging.basicConfig(filename="./training_log.txt", level=logging.DEBUG, filemode="a",
                         format="[%(asctime)s] %(message)s")
     logging.getLogger().addHandler(logging.StreamHandler())
@@ -17,7 +18,7 @@ def sample(model_path, num_samples=1):
         device = "cpu"
     logging.info(f"Starting program on {device}")
 
-    checkpoint = torch.load(model_path)
+    checkpoint = torch.load(f"./models/{im_name}/epoch-{model_epoch}.pt")
     args = checkpoint["args"]
 
     model = DiT(
@@ -47,7 +48,7 @@ def sample(model_path, num_samples=1):
         timestep_respacing="",
     )
 
-    image_untransform = Normalize(mean=[-1, -1, -1], std=[2, 2, 2])
+    # image_untransform = Normalize(mean=[-1, -1, -1], std=[2, 2, 2])
 
     logging.info("Starting sampling")
     for i in range(1, num_samples + 1):
@@ -58,9 +59,14 @@ def sample(model_path, num_samples=1):
             device=device,
             progress=True
         )
-        unnormalized = image_untransform(_sample[0])
-        torchvision.utils.save_image(unnormalized, f"./results/wave/model-100000-{i}.jpg")
+        # unnormalized = image_untransform(_sample[0])
+        torchvision.utils.save_image(_sample[0] * 255.0, f"./results/{im_name}/model-{model_epoch}-{i}.jpg")
 
 
 if __name__ == "__main__":
-    sample(model_path="./models/wave/epoch-130000.pt", num_samples=10)
+    parser = argparse.ArgumentParser()
+    parser.add_argument("image")
+    parser.add_argument("epoch")
+    parser.add_argument("num_samples")
+    args = parser.parse_args()
+    sample(args.image, args.epoch, int(args.num_samples))
